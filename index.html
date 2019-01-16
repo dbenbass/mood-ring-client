@@ -12,6 +12,56 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Welcome to.....Mood Ring</h1>
+        <br>
+      <form id="sign-up">
+   <fieldset>
+     Sign up
+     <input type="text" name="credentials[email]" placeholder="Email" id="signupemail">
+     <input type="password" name="credentials[password]" placeholder="Password" id="signuppassword">
+     <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" id="signuppasswordconfirm">
+     <input type="submit" value="Sign up">
+   </fieldset>
+ </form>
+
+   <form id="sign-in">
+   <fieldset>
+     Sign in
+     <input type="text" name="credentials[email]" placeholder="Email" id="email">
+     <input type="password" name="credentials[password]" placeholder="Password" id="password">
+     <input type="submit" value="Sign in">
+   </fieldset>
+</form>
+
+<form id="change-password">
+   <fieldset>
+     Change password
+     <input type="password" name="passwords[old]" placeholder="Old password" id="oldpassword">
+     <input type="password" name="passwords[new]" placeholder="New password" id="newpassword">
+     <input type="submit" value="Change password">
+   </fieldset>
+</form>
+<br>
+  <br>
+    <br>
+<h1>Create Your Mood Ring!</h1>
+  <form id="group-create">
+  <input type="name" name="group[name]" placeholder="Name your group" id="ringname">
+  <input type="submit" value="Create">
+
+    <h1>Join a Ring</h1>
+
+
+<form id="sign-out">
+   <fieldset>
+     Sign out
+     <input type="submit" value="Sign out">
+   </fieldset>
+</form>
+<br>
+  <br>
+    <br>
+
+      <br>
     </body>
 </html>
