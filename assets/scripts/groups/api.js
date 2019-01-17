@@ -44,6 +44,13 @@ const showAllGroups = () => {
   })
 }
 
+const showOneGroup = function (oneObject) {
+  return $.ajax({
+    url: config.apiUrl + `/groups/${oneObject.group.id}`,
+    method: 'GET'
+  })
+}
+
 const deleteGroup = function (data) {
   return $.ajax({
     url: config.apiUrl + `/groups/${data.group.id}`,
@@ -72,5 +79,6 @@ module.exports = {
   createMood,
   showAllGroups,
   deleteGroup,
-  updateGroup
+  updateGroup,
+  showOneGroup
 }

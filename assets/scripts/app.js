@@ -20,9 +20,14 @@ $(() => {
   $('#group-index').on('submit', groupEvents.onShowAllGroups)
   $('#group-delete').on('submit', groupEvents.onDeleteGroup)
   $('#groups-update').on('submit', groupEvents.onUpdateGroup)
+  $('#group-show').on('submit', groupEvents.onShowOneGroup)
+
+  $('#group-create-div').hide()
+  $('#user-group-create-div').hide()
   $('#mood_id').hide()
   $('#fake').click(function () {
     $('#mood_id').show()
+    $('#fake').hide()
   })
 
   // $('#scheme-index').on('submit', schemeEvents.onShowAllSchemes)

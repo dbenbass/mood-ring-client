@@ -14,8 +14,8 @@ const createGroupSuccess = data => {
   $('#groupmessage').text(`Your mood ring is called ${data.group.name}. Please enter ID ${data.group.id} to join the ring!`)
   console.log('createGroup ran. Data is :', data)
   // create a scheme and then run showAllSchemes
-   api.showAllGroups()
-    //.then(showUserGroupSuccess)
+  api.showAllGroups()
+  // .then(showUserGroupSuccess)
   //   .catch()
 }
 const createGroupFailure = data => {
@@ -100,6 +100,15 @@ const updateGroupSuccess = id => {
   //    .catch()
 }
 
+const showOneGroupSuccess = function (group) {
+  console.log(group.group)
+  const groupHTML = (`
+    <h1>${group.group.name}</h1>
+    <p>ID: ${group.group.id}</p>
+    <br>
+    `)
+  $('#data').append(groupHTML)
+}
 module.exports = {
   createGroupSuccess,
   createGroupFailure,
@@ -109,5 +118,6 @@ module.exports = {
   createMoodSuccess,
   showAllGroupsSuccess,
   deleteGroupSuccess,
-  updateGroupSuccess
+  updateGroupSuccess,
+  showOneGroupSuccess
 }

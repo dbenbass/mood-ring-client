@@ -50,6 +50,18 @@ const onShowAllGroups = (event) => {
     .catch(ui.showAllGroupsFailure) // if your request failed
 }
 
+const onShowOneGroup = event => {
+  console.log('get one group')
+  event.preventDefault()
+  const input = getFormFields(event.target)
+  const oneObject = input
+  api.showOneGroup(oneObject)
+  // take this data and send it to our server
+  // using an HTTP request (POST)
+    .then(ui.showOneGroupSuccess) // if your request was succesful
+    .catch(ui.showOneGroupFailure) // if your request failed
+}
+
 const onDeleteGroup = event => {
   event.preventDefault()
   const input = getFormFields(event.target)
@@ -81,5 +93,6 @@ module.exports = {
   onCreateMood,
   onShowAllGroups,
   onDeleteGroup,
-  onUpdateGroup
+  onUpdateGroup,
+  onShowOneGroup
 }

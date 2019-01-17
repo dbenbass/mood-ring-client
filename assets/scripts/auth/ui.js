@@ -29,8 +29,9 @@ const signInSuccess = data => {
   $('#message').addClass('success')
   $('#change-password').show()
   $('#sign-out').show()
+  $('#group-create-div').show()
+  $('#user-group-create-div').show()
   $('#sign-up').hide()
-  $('#sign-in').hide()
   $('#sign-in').hide()
   $('#password').val('')
   $('#email').val('')
@@ -72,9 +73,11 @@ const signOutSuccess = data => {
   $('#message').addClass('success')
   console.log('signOutSuccess ran. Data is :', data)
   $('#sign-out').hide()
+  $('#sign-in').show()
+  $('#sign-up').show()
+  $('#change-password').show()
   $('#scheme-create').hide()
   $('#scheme-update').hide()
-  $('#change-password').hide()
 }
 
 const signOutFailure = error => {
