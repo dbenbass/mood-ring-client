@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store.js')
-// const api = require('./api.js')
+const api = require('./api.js')
 
 const createGroupSuccess = data => {
   store.group = data.group.id
@@ -13,11 +13,10 @@ const createGroupSuccess = data => {
   // $('#message').addClass('success')
   $('#groupmessage').text(`Your mood ring is called ${data.group.name}. Please enter ID ${data.group.id} to join the ring!`)
   console.log('createGroup ran. Data is :', data)
-
   // create a scheme and then run showAllSchemes
-  // api.showUserGroup()
-  //  .then(showUserGroupSuccess)
-  //    .catch()
+   api.showAllGroups()
+    //.then(showUserGroupSuccess)
+  //   .catch()
 }
 const createGroupFailure = data => {
   // $('#message').text('Failure on scheme create')
@@ -26,6 +25,16 @@ const createGroupFailure = data => {
   $('#ringname').val('')
   console.error('did not run. Data is :', data)
   console.log(data)
+}
+
+const deleteGroupSuccess = data => {
+  $('#deletemessage').text('Successfuly deleted scheme')
+  $('#deletemessage').removeClass()
+  $('#deletemessage').addClass('success')
+  $('#delete-input').val('')
+  console.log('deleteScheme ran. Data is :', data)
+  api.showAllGroups()
+    .then(showAllGroupsSuccess)
 }
 
 const createUserGroupSuccess = data => {
@@ -78,6 +87,19 @@ const showAllGroupsSuccess = data => {
   })
 }
 
+const updateGroupSuccess = id => {
+  store.groups = id.groups
+  $('#group-name-update').val('')
+  $('#message').text('Successfuly updated group')
+  $('#submitmessage').removeClass()
+  $('#submitmessage').addClass('success')
+  console.log('updateScheme ran. Data is :', id)
+  // create a scheme and then run showAllSchemes
+  api.showAllGroups()
+    .then(showAllGroupsSuccess)
+  //    .catch()
+}
+
 module.exports = {
   createGroupSuccess,
   createGroupFailure,
@@ -85,5 +107,7 @@ module.exports = {
   createUserGroupFailure,
   createMoodFailure,
   createMoodSuccess,
-  showAllGroupsSuccess
+  showAllGroupsSuccess,
+  deleteGroupSuccess,
+  updateGroupSuccess
 }

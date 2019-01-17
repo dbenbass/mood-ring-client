@@ -23,6 +23,7 @@ const signUpFailure = error => {
 
 const signInSuccess = data => {
   store.user = data.user
+  console.log(store.user)
   $('#message').text('Signed in successfully')
   $('#message').removeClass()
   $('#message').addClass('success')

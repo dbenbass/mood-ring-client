@@ -3,6 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const store = require('../store.js')
 
 const onCreateGroup = event => {
   event.preventDefault()
@@ -18,7 +19,8 @@ const onCreateGroup = event => {
 const onCreateUserGroup = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('we are here')
+  data.user_group.user_id = store.user.id
+  console.log('we are here', data)
   // take this data and send it to our server
   // using an HTTP request (POST)
   api.createUserGroup(data)
@@ -47,9 +49,37 @@ const onShowAllGroups = (event) => {
     .then(ui.showAllGroupsSuccess) // if your request was succesful
     .catch(ui.showAllGroupsFailure) // if your request failed
 }
+
+const onDeleteGroup = event => {
+  event.preventDefault()
+  const input = getFormFields(event.target)
+  console.log('delete group')
+  const data = input
+
+  // take this data and send it to our server
+  // using an HTTP request (POST)
+  api.deleteGroup(data)
+    .then(ui.deleteGroupSuccess) // if your request was succesful
+    .catch(ui.deleteGroupFailure) // if your request failed
+}
+
+const onUpdateGroup = function (event) {
+  console.log('update')
+  event.preventDefault()
+  const input = getFormFields(event.target)
+  const groupObject = input
+  api.updateGroup(groupObject)
+    .then(function (response) {
+      ui.updateGroupSuccess(response)
+    })
+    .catch(ui.updateGroupFailure)
+}
+
 module.exports = {
   onCreateGroup,
   onCreateUserGroup,
   onCreateMood,
-  onShowAllGroups
+  onShowAllGroups,
+  onDeleteGroup,
+  onUpdateGroup
 }

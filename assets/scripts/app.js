@@ -18,6 +18,12 @@ $(() => {
   $('#mood-level').on('submit', groupEvents.onCreateMood)
   $('#user-group-create').on('submit', groupEvents.onCreateUserGroup)
   $('#group-index').on('submit', groupEvents.onShowAllGroups)
+  $('#group-delete').on('submit', groupEvents.onDeleteGroup)
+  $('#groups-update').on('submit', groupEvents.onUpdateGroup)
+  $('#mood_id').hide()
+  $('#fake').click(function () {
+    $('#mood_id').show()
+  })
 
   // $('#scheme-index').on('submit', schemeEvents.onShowAllSchemes)
   // $('#scheme-delete').on('submit', schemeEvents.onDeleteScheme)
