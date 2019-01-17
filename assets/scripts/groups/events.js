@@ -37,8 +37,19 @@ const onCreateMood = event => {
     .catch(ui.createMoodFailure) // if your request failed
 }
 
+const onShowAllGroups = (event) => {
+  if (event) { event.preventDefault() }
+  // const data = getFormFields(event.target)
+  console.log('get groups')
+  // take this data and send it to our server
+  // using an HTTP request (POST)
+  api.showAllGroups()
+    .then(ui.showAllGroupsSuccess) // if your request was succesful
+    .catch(ui.showAllGroupsFailure) // if your request failed
+}
 module.exports = {
   onCreateGroup,
   onCreateUserGroup,
-  onCreateMood
+  onCreateMood,
+  onShowAllGroups
 }

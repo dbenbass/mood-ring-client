@@ -35,8 +35,17 @@ const createMood = data => {
     data: data
   })
 }
+
+const showAllGroups = () => {
+  return $.ajax({
+    url: config.apiUrl + '/groups',
+    method: 'GET'
+  })
+}
+
 module.exports = {
   createGroup,
   createUserGroup,
-  createMood
+  createMood,
+  showAllGroups
 }

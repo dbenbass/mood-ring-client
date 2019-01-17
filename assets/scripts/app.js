@@ -17,6 +17,7 @@ $(() => {
   $('#group-create').on('submit', groupEvents.onCreateGroup)
   $('#mood-level').on('submit', groupEvents.onCreateMood)
   $('#user-group-create').on('submit', groupEvents.onCreateUserGroup)
+  $('#group-index').on('submit', groupEvents.onShowAllGroups)
 
   // $('#scheme-index').on('submit', schemeEvents.onShowAllSchemes)
   // $('#scheme-delete').on('submit', schemeEvents.onDeleteScheme)
