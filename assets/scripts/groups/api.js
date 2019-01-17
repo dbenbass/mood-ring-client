@@ -14,6 +14,29 @@ const createGroup = data => {
   })
 }
 
+const createUserGroup = data => {
+  return $.ajax({
+    url: config.apiUrl + '/user_groups',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+
+const createMood = data => {
+  return $.ajax({
+    url: config.apiUrl + '/moods',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
 module.exports = {
-  createGroup
+  createGroup,
+  createUserGroup,
+  createMood
 }

@@ -15,6 +15,9 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#group-create').on('submit', groupEvents.onCreateGroup)
+  $('#mood-level').on('submit', groupEvents.onCreateMood)
+  $('#user-group-create').on('submit', groupEvents.onCreateUserGroup)
+
   // $('#scheme-index').on('submit', schemeEvents.onShowAllSchemes)
   // $('#scheme-delete').on('submit', schemeEvents.onDeleteScheme)
   // $('#scheme-show').on('submit', schemeEvents.onShowOneScheme)
