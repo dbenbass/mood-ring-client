@@ -7,6 +7,7 @@ const createGroupSuccess = data => {
   store.group = data.group.id
   console.log(data.group.id)
   $('#ringname').val('')
+  $('#message').text('')
 
   // $('#message').text('Successfuly created scheme')
   // $('#message').removeClass()
@@ -51,6 +52,7 @@ const createUserGroupSuccess = data => {
   store.user_groups = data.user_groups
   $('#groupmessage').text(`You've joined ${data.user_group.group.name}. The average mood in here is ${data.user_group.group.averagemood} `)
   $('#moodbox_id').val('')
+  $('#message').text('')
   console.log('createUserGroup ran. Data is :', data)
 }
 
