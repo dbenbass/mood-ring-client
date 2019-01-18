@@ -80,20 +80,7 @@ const signOutSuccess = data => {
   $('#groups-update').hide()
   $('#group-delete').hide()
   $('#group-index').hide()
-  $('#group-index').hide()
-
-
-
-
-  $('#group-create').on('submit', groupEvents.onCreateGroup)
-  $('#mood-level').on('submit', groupEvents.onCreateMood)
-  $('#user-group-create').on('submit', groupEvents.onCreateUserGroup)
-  // $('#user-group-delete').on('submit', groupEvents.onDeleteUserGroup)
-  $('#group-index').on('submit', groupEvents.onShowAllGroups)
-  $('#group-delete').on('submit', groupEvents.onDeleteGroup)
-  $('#groups-update').on('submit', groupEvents.onUpdateGroup)
-  $('#group-show').on('submit', groupEvents.onShowOneGroup)
-  $('#group-create-div').hide()
+  $('#user-group-create').hide()
 }
 
 const signOutFailure = error => {
