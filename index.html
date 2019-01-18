@@ -54,6 +54,13 @@
 </form>
 <br>
 <p id="groupmessage">
+
+  <form id="user-group-delete">
+     <fieldset>
+       Sign out
+       <input type="submit" value="Exit group">
+     </fieldset>
+  </form>
 <br>
  <br>
 
@@ -61,11 +68,12 @@
 <h1>Join a Ring</h1>
 <fieldset>
     <form id="user-group-create">
-    <input type="group id" name="user_group[group_id]" placeholder="Group ID" id="group_id">
-    <input type="mood id" name="user_group[mood_id]" placeholder="Mood ID" id="mood_id">
+    <input type="group id" name="user_group[group_id]" placeholder="Group ID" class="group_id">
+    <input type="button" value="Join Group" class="group_id" id="group_id">
+
+    <input type="mood id" name="user_group[mood_id]" placeholder="Mood ID" class="mood_id">
     <!-- <input type="user id" name="user_group[user_id]" placeholder="User ID" id="user_id"> -->
-    <input type="submit" value="Join">
-    <input type="button" value="fake" id="fake">
+    <input type="submit" value="Submit Mood" class="mood_id">
   </form>
   </fieldset>
 </div>

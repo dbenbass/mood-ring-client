@@ -28,7 +28,7 @@ const createGroupFailure = data => {
 }
 
 const deleteGroupSuccess = data => {
-  $('#deletemessage').text('Successfuly deleted scheme')
+  $('#deletemessage').text('Successfuly deleted group')
   $('#deletemessage').removeClass()
   $('#deletemessage').addClass('success')
   $('#delete-input').val('')
@@ -37,12 +37,29 @@ const deleteGroupSuccess = data => {
     .then(showAllGroupsSuccess)
 }
 
+// const deleteUserGroupSuccess = data => {
+//   $('#deletegroupmessage').text('Successfuly deleted user group')
+//   $('#deletegroupmessage').removeClass()
+//   $('#deletegroupmessage').addClass('success')
+//   $('#delete-group-input').val('')
+//   console.log('deleteScheme ran. Data is :', data)
+//   api.showAllGroups()
+//     .then(showAllGroupsSuccess)
+// }
+
 const createUserGroupSuccess = data => {
   store.user_groups = data.user_groups
   $('#groupmessage').text(`You've joined ${data.user_group.group.name}. The average mood in here is ${data.user_group.group.averagemood} `)
 
   console.log('createUserGroup ran. Data is :', data)
 }
+
+// const deleteUserGroupSuccess = data => {
+//   store.user_groups = data.user_groups
+//   $('#groupmessage').text(`You've exited ${data.user_group.group.name}. The average mood in there is now ${data.user_group.group.averagemood} `)
+//
+//   console.log('deleteUserGroup ran. Data is :', data)
+// }
 
 const createUserGroupFailure = data => {
   store.user_groups = data.user_groups
@@ -119,5 +136,6 @@ module.exports = {
   showAllGroupsSuccess,
   deleteGroupSuccess,
   updateGroupSuccess,
-  showOneGroupSuccess
+  showOneGroupSuccess,
+  // deleteUserGroupSuccess
 }

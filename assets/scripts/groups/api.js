@@ -40,14 +40,20 @@ const createMood = data => {
 const showAllGroups = () => {
   return $.ajax({
     url: config.apiUrl + '/groups',
-    method: 'GET'
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
 const showOneGroup = function (oneObject) {
   return $.ajax({
     url: config.apiUrl + `/groups/${oneObject.group.id}`,
-    method: 'GET'
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
@@ -61,6 +67,17 @@ const deleteGroup = function (data) {
     data: data
   })
 }
+//
+// const deleteUserGroup = function (data) {
+//   return $.ajax({
+//     url: config.apiUrl + `/user_groups/${data.group.id}`,
+//     method: 'DELETE',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data: data
+//   })
+// }
 
 const updateGroup = function (groupObject) {
   return $.ajax({
@@ -80,5 +97,6 @@ module.exports = {
   showAllGroups,
   deleteGroup,
   updateGroup,
-  showOneGroup
+  showOneGroup,
+  // deleteUserGroup
 }

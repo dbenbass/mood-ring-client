@@ -16,18 +16,6 @@ const onCreateGroup = event => {
     .catch(ui.createGroupFailure) // if your request failed
 }
 
-const onCreateUserGroup = event => {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  data.user_group.user_id = store.user.id
-  console.log('we are here', data)
-  // take this data and send it to our server
-  // using an HTTP request (POST)
-  api.createUserGroup(data)
-    .then(ui.createUserGroupSuccess) // if your request was succesful
-    .catch(ui.createUserGroupFailure) // if your request failed
-}
-
 const onCreateMood = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -75,6 +63,28 @@ const onDeleteGroup = event => {
     .catch(ui.deleteGroupFailure) // if your request failed
 }
 
+// const onDeleteUserGroup = event => {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   console.log('delete group')
+//   const data = input
+//   api.deleteUserGroup(data)
+//     .then(ui.deleteUserGroupSuccess)
+//     .catch(ui.deleteUserGroupFailure)
+// }
+
+const onCreateUserGroup = event => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  data.user_group.user_id = store.user.id
+  console.log('we are here', data)
+  // take this data and send it to our server
+  // using an HTTP request (POST)
+  api.createUserGroup(data)
+    .then(ui.createUserGroupSuccess) // if your request was succesful
+    .catch(ui.createUserGroupFailure) // if your request failed
+}
+
 const onUpdateGroup = function (event) {
   console.log('update')
   event.preventDefault()
@@ -94,5 +104,6 @@ module.exports = {
   onShowAllGroups,
   onDeleteGroup,
   onUpdateGroup,
-  onShowOneGroup
+  onShowOneGroup,
+  // onDeleteUserGroup
 }
