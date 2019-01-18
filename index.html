@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title> Mood Ring :) (: </title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,8 +12,10 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Welcome to.....Mood Ring</h1>
+      <h1>Mood Ring :) (:</h1>
         <br>
+        <p id="message"></p>
+
       <form id="sign-up">
    <fieldset>
      Sign up
@@ -23,7 +25,6 @@
      <input type="submit" value="Sign up">
    </fieldset>
  </form>
-
    <form id="sign-in">
    <fieldset>
      Sign in
@@ -32,46 +33,37 @@
      <input type="submit" value="Sign in">
    </fieldset>
 </form>
-
-<form id="change-password">
-   <fieldset>
-     Change password
-     <input type="password" name="passwords[old]" placeholder="Old password" id="oldpassword">
-     <input type="password" name="passwords[new]" placeholder="New password" id="newpassword">
-     <input type="submit" value="Change password">
-   </fieldset>
-</form>
 <br>
   <br>
     <br>
 <div id="group-create-div">
-<h1>Create your Moood Ring!</h1>
+<form id="group-create">
 <fieldset>
-  <form id="group-create">
+  <h1>Create a Mood Ring</h1>
   <input type="name" name="group[name]" placeholder="Name your group" id="ringname">
   <input type="submit" value="Create">
 </fieldset>
 </form>
 <br>
 <p id="groupmessage">
+  <p id="moodmessage">
 
-  <form id="user-group-delete">
+  <!-- <form id="user-group-delete">
      <fieldset>
        Sign out
        <input type="submit" value="Exit group">
      </fieldset>
   </form>
 <br>
- <br>
+ <br> -->
 
 <div id="user-group-create-div">
-<h1>Join a Ring</h1>
+<form id="user-group-create">
 <fieldset>
-    <form id="user-group-create">
+  <h1>Join a Ring</h1>
     <input type="group id" name="user_group[group_id]" placeholder="Group ID" class="group_id">
     <input type="button" value="Join Group" class="group_id" id="group_id">
-
-    <input type="mood id" name="user_group[mood_id]" placeholder="Mood ID" class="mood_id">
+    <input type="mood id" name="user_group[mood_id]" placeholder="Enter a mood from 1-10" class="mood_id" id="moodbox_id">
     <!-- <input type="user id" name="user_group[user_id]" placeholder="User ID" id="user_id"> -->
     <input type="submit" value="Submit Mood" class="mood_id">
   </form>
@@ -80,48 +72,49 @@
   <br>
   <br>
    <br>
-
-   <h1>See all Mood Rings</h1>
-   <fieldset>
-     <form id="group-index">
-       <input type="submit" value="Go">
+   <br>
+   <br>
+    <br>
+<form id="group-index">
+  <fieldset>
+       <input type="submit" value="Show all Mood Rings">
      </form>
      </fieldset>
      <br>
      <br>
 
+<form id="groups-update">
+  <fieldset>
      <h1>Change name</h1>
-     <fieldset>
-     <form id="groups-update">
-      <fieldset>
         edit your group by ID number.
       <br>
        <input type="text" name="group[id]" placeholder="ID here" id="group-id-update">
         <br>
         <input type="text" name="group[name]" placeholder="Name" id="name-update">
         <br>
-        <input type="submit" value="Edit scheme">
+        <input type="submit" value="Edit group">
           </fieldset>
          </form>
          <br>
            <br>
 
-
-     <h1>Delete a Mood Ring</h1>
-     <fieldset>
-       <form id="group-delete">
-          <input type="text" name="group[id]" placeholder="group ID" id="delete-input">
+<form id="group-delete">
+<fieldset>
+<h1>Delete a Mood Ring</h1>
+    <form id="group-delete">
+        <input type="text" name="group[id]" placeholder="group ID" id="delete-input">
           <input type="submit" value="Delete">
             </fieldset>
               </form>
               <br>
               <br>
 
-      <h1>Show one Mood Ring</h1>
+<form id="group-show">
+  <fieldset>
+  <h1>Show one Mood Ring</h1>
       <form id="group-show">
-      <fieldset>
         <input type="text" name="group[id]" placeholder="ID" id="id">
-        <input type="submit" value="Show one scheme">
+        <input type="submit" value="Show one ring">
       </fieldset>
     </form>
         <br>
@@ -129,10 +122,16 @@
             <br>
               <br>
 
-  <p id="message"></p>
   <p id="joinmessage"></p>
 
-
+<form id="change-password">
+     <fieldset>
+       Change password
+       <input type="password" name="passwords[old]" placeholder="Old password" id="oldpassword">
+       <input type="password" name="passwords[new]" placeholder="New password" id="newpassword">
+       <input type="submit" value="Change password">
+     </fieldset>
+  </form>
 
 <form id="sign-out">
    <fieldset>

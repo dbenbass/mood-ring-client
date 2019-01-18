@@ -5,6 +5,7 @@ const signUpSuccess = data => {
   $('#message').text('Signed up successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#change-password').hide()
   $('#signupemail').val('')
   $('#signuppassword').val('')
   $('#signuppasswordconfirm').val('')
@@ -81,6 +82,8 @@ const signOutSuccess = data => {
   $('#group-delete').hide()
   $('#group-index').hide()
   $('#user-group-create').hide()
+  $('#data').hide()
+
 }
 
 const signOutFailure = error => {

@@ -50,7 +50,7 @@ const deleteGroupSuccess = data => {
 const createUserGroupSuccess = data => {
   store.user_groups = data.user_groups
   $('#groupmessage').text(`You've joined ${data.user_group.group.name}. The average mood in here is ${data.user_group.group.averagemood} `)
-
+  $('#moodbox_id').val('')
   console.log('createUserGroup ran. Data is :', data)
 }
 
@@ -79,7 +79,7 @@ const createMoodFailure = data => {
 const showAllGroupsSuccess = data => {
   store.groups = data.groups
   // console.log(store.schemes)
-  $('#message').text('You are currently viewing all schemes')
+  $('#message').text('You are currently viewing all rings')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#data').html('')

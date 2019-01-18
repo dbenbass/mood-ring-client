@@ -22,12 +22,14 @@ $(() => {
   $('#group-delete').on('submit', groupEvents.onDeleteGroup)
   $('#groups-update').on('submit', groupEvents.onUpdateGroup)
   $('#group-show').on('submit', groupEvents.onShowOneGroup)
+  $('#change-password').hide()
   $('#group-create-div').hide()
   $('#user-group-create-div').hide()
   $('.mood_id').hide()
   $('#group_id').click(function () {
     $('.mood_id').show()
     $('.group_id').hide()
+    // $('#moodmessage').html(' now submit your mood on a scale of 1-10!')
   })
 
   // $('#scheme-index').on('submit', schemeEvents.onShowAllSchemes)
