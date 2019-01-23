@@ -36,6 +36,14 @@ const signInSuccess = data => {
   $('#sign-in').hide()
   $('#password').val('')
   $('#email').val('')
+  $('#group-create').show()
+  $('#groups-update').show()
+  $('#group-delete').show()
+  $('#group-index').show()
+  $('#group-show').show()
+  $('#user-group-create').show()
+  $('#data').show()
+  $('#groupmessage').html('')
   console.log('signInSuccess ran. Data is :', data)
 }
 
@@ -75,7 +83,7 @@ const signOutSuccess = data => {
   $('#sign-out').hide()
   $('#sign-in').show()
   $('#sign-up').show()
-  $('#change-password').show()
+  $('#change-password').hide()
   $('#group-create').hide()
   $('#groups-update').hide()
   $('#group-delete').hide()

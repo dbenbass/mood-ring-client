@@ -8,16 +8,9 @@ const createGroupSuccess = data => {
   console.log(data.group.id)
   $('#ringname').val('')
   $('#message').text('')
-
-  // $('#message').text('Successfuly created scheme')
-  // $('#message').removeClass()
-  // $('#message').addClass('success')
-  $('#groupmessage').html(`Your mood ring is called ${data.group.name}. Please enter ID ${data.group.id} to join the ring!`)
+  $('#groupmessage').html(`Your mood ring is called ${data.group.name}. Please enter ID ${data.group.id} below to join the ring!`)
   console.log('createGroup ran. Data is :', data)
-  // create a scheme and then run showAllSchemes
   api.showAllGroups()
-  // .then(showUserGroupSuccess)
-  //   .catch()
 }
 const createGroupFailure = data => {
   // $('#message').text('Failure on scheme create')
@@ -38,24 +31,15 @@ const deleteGroupSuccess = data => {
     .then(showAllGroupsSuccess)
 }
 
-// const deleteUserGroupSuccess = data => {
-//   $('#deletegroupmessage').text('Successfuly deleted user group')
-//   $('#deletegroupmessage').removeClass()
-//   $('#deletegroupmessage').addClass('success')
-//   $('#delete-group-input').val('')
-//   console.log('deleteScheme ran. Data is :', data)
-//   api.showAllGroups()
-//     .then(showAllGroupsSuccess)
-// }
-
 const createUserGroupSuccess = data => {
   store.user_groups = data.user_groups
-  $('#groupmessage').text(`You've joined ${data.user_group.group.name}. The average mood in here is ${data.user_group.group.averagemood} `)
+  $('#groupmessage').text(`You've joined ${data.user_group.group.name}. The average mood in here is ${data.user_group.group.averagemood}. ${data.user_group.group.numberofparticipants} `)
   $('#moodbox_id').val('')
   $('#message').text('')
   console.log('createUserGroup ran. Data is :', data)
   $('.mood_id').hide()
   $('.group_id').show()
+  $('#group_id_formfield').val('')
 }
 
 // const deleteUserGroupSuccess = data => {
@@ -118,7 +102,7 @@ const updateGroupSuccess = id => {
   $('#submitmessage').removeClass()
   $('#submitmessage').addClass('success')
   console.log('updateScheme ran. Data is :', id)
-  // create a scheme and then run showAllSchemes
+  // update a group/s name and then run showallgroups
   api.showAllGroups()
     .then(showAllGroupsSuccess)
   //    .catch()
@@ -143,6 +127,6 @@ module.exports = {
   showAllGroupsSuccess,
   deleteGroupSuccess,
   updateGroupSuccess,
-  showOneGroupSuccess,
+  showOneGroupSuccess
   // deleteUserGroupSuccess
 }
