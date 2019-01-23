@@ -29,7 +29,7 @@ $(() => {
   $('#group_id').click(function () {
     $('.mood_id').show()
     $('.group_id').hide()
-    // $('#moodmessage').html(' now submit your mood on a scale of 1-10!')
+    $('#groupmessage').html(`Now submit your mood on a scale of 1-10`)
   })
 
   // $('#scheme-index').on('submit', schemeEvents.onShowAllSchemes)

@@ -12,7 +12,7 @@ const createGroupSuccess = data => {
   // $('#message').text('Successfuly created scheme')
   // $('#message').removeClass()
   // $('#message').addClass('success')
-  $('#groupmessage').text(`Your mood ring is called ${data.group.name}. Please enter ID ${data.group.id} to join the ring!`)
+  $('#groupmessage').html(`Your mood ring is called ${data.group.name}. Please enter ID ${data.group.id} to join the ring!`)
   console.log('createGroup ran. Data is :', data)
   // create a scheme and then run showAllSchemes
   api.showAllGroups()
@@ -54,6 +54,8 @@ const createUserGroupSuccess = data => {
   $('#moodbox_id').val('')
   $('#message').text('')
   console.log('createUserGroup ran. Data is :', data)
+  $('.mood_id').hide()
+  $('.group_id').show()
 }
 
 // const deleteUserGroupSuccess = data => {
@@ -66,6 +68,9 @@ const createUserGroupSuccess = data => {
 const createUserGroupFailure = data => {
   store.user_groups = data.user_groups
   console.error('createUserGroup did not run. Data is :', data)
+  $('.mood_id').hide()
+  $('.group_id').show()
+  $('#groupmessage').text(`Try again please`)
 }
 
 const createMoodSuccess = data => {

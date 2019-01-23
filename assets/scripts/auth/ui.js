@@ -36,7 +36,6 @@ const signInSuccess = data => {
   $('#sign-in').hide()
   $('#password').val('')
   $('#email').val('')
-
   console.log('signInSuccess ran. Data is :', data)
 }
 
@@ -81,9 +80,10 @@ const signOutSuccess = data => {
   $('#groups-update').hide()
   $('#group-delete').hide()
   $('#group-index').hide()
+  $('#group-show').hide()
   $('#user-group-create').hide()
   $('#data').hide()
-
+  $('#groupmessage').html('')
 }
 
 const signOutFailure = error => {
