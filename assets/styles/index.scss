@@ -10,16 +10,20 @@ body {
   align-items: center;
   color: white;
 }
-h1 { color: lightpink;}
 
+.mood_id {
+  background-color: yellow;
+}
+
+
+
+h1 { color: lightpink;}
 h5 { font-size: 20vw; }
 
 .linear-wipe {
   text-align: center;
-
   background: linear-gradient(to right, #FFF 20%, #FF0 40%, #FF0 60%, #FFF 80%);
   background-size: 200% auto;
-
   color: #000;
   background-clip: text;
   text-fill-color: transparent;

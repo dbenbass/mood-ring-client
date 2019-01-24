@@ -22,7 +22,18 @@ const createGroupFailure = data => {
 }
 
 const deleteGroupSuccess = data => {
-  $('#deletemessage').text('Successfuly deleted group')
+  $('#groupmessage').text('')
+  $('#deletemessage').text(`mood ring was deleted.`)
+  $('#deletemessage').removeClass()
+  $('#deletemessage').addClass('success')
+  $('#delete-input').val('')
+  console.log('deleteScheme ran. Data is :', data)
+  api.showAllGroups()
+    .then(showAllGroupsSuccess)
+}
+
+const deleteGroupFailure = data => {
+  $('#message').text('Error in deleting group')
   $('#deletemessage').removeClass()
   $('#deletemessage').addClass('success')
   $('#delete-input').val('')
@@ -55,6 +66,7 @@ const createUserGroupFailure = data => {
   $('.mood_id').hide()
   $('.group_id').show()
   $('#groupmessage').text(`Try again please`)
+  $('#group_id_formfield').val('')
 }
 
 const createMoodSuccess = data => {
@@ -70,7 +82,7 @@ const createMoodFailure = data => {
 const showAllGroupsSuccess = data => {
   store.groups = data.groups
   // console.log(store.schemes)
-  $('#message').text('You are currently viewing all rings')
+  $('#message').html('You are currently viewing all rings')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#data').html('')
@@ -113,6 +125,7 @@ const showOneGroupSuccess = function (group) {
   const groupHTML = (`
     <h1>${group.group.name}</h1>
     <p>ID: ${group.group.id}</p>
+    <p>with ${group.group.numberofparticipants}member/s</p>
     <br>
     `)
   $('#data').append(groupHTML)
@@ -126,6 +139,7 @@ module.exports = {
   createMoodSuccess,
   showAllGroupsSuccess,
   deleteGroupSuccess,
+  deleteGroupFailure,
   updateGroupSuccess,
   showOneGroupSuccess
   // deleteUserGroupSuccess

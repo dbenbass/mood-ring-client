@@ -97,6 +97,6 @@ module.exports = {
   showAllGroups,
   deleteGroup,
   updateGroup,
-  showOneGroup,
+  showOneGroup
   // deleteUserGroup
 }
