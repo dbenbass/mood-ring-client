@@ -53,13 +53,6 @@ const createUserGroupSuccess = data => {
   $('#group_id_formfield').val('')
 }
 
-// const deleteUserGroupSuccess = data => {
-//   store.user_groups = data.user_groups
-//   $('#groupmessage').text(`You've exited ${data.user_group.group.name}. The average mood in there is now ${data.user_group.group.averagemood} `)
-//
-//   console.log('deleteUserGroup ran. Data is :', data)
-// }
-
 const createUserGroupFailure = data => {
   store.user_groups = data.user_groups
   console.error('createUserGroup did not run. Data is :', data)
@@ -77,6 +70,8 @@ const createMoodSuccess = data => {
 const createMoodFailure = data => {
   store.moods = data.moods
   console.error('createMood did not run. Data is :', data)
+  $('#groupmessage').text(`Try again please`)
+
 }
 
 const showAllGroupsSuccess = data => {
@@ -110,7 +105,19 @@ const showAllGroupsSuccess = data => {
 const updateGroupSuccess = id => {
   store.groups = id.groups
   $('#group-name-update').val('')
-  $('#message').text('Successfuly updated group')
+  $('#groupmessage').text('Successfuly updated group')
+  $('#submitmessage').removeClass()
+  $('#submitmessage').addClass('success')
+  console.log('updateScheme ran. Data is :', id)
+  // update a group/s name and then run showallgroups
+  api.showAllGroups()
+    .then(showAllGroupsSuccess)
+}
+
+const updateGroupFailure = id => {
+  store.groups = id.groups
+  $('#group-name-update').val('')
+  $('#groupmessage').text('You cannot edit this mood ring. Keep in mind that you can only do so if you are the creator of the ring.')
   $('#submitmessage').removeClass()
   $('#submitmessage').addClass('success')
   console.log('updateScheme ran. Data is :', id)
@@ -124,11 +131,11 @@ const showOneGroupSuccess = function (group) {
   console.log(group.group)
   const groupHTML = (`
     <h1>${group.group.name}</h1>
-    <p>ID: ${group.group.id}</p>
-    <p>with ${group.group.numberofparticipants}member/s</p>
+    ${group.group.numberofparticipants} users belong to this ring. It's average mood is ${group.group.averagemood}.<br>
+    ID: ${group.group.id}
     <br>
     `)
-  $('#data').append(groupHTML)
+  $('#data').html(groupHTML)
 }
 module.exports = {
   createGroupSuccess,
@@ -141,6 +148,6 @@ module.exports = {
   deleteGroupSuccess,
   deleteGroupFailure,
   updateGroupSuccess,
+  updateGroupFailure,
   showOneGroupSuccess
-  // deleteUserGroupSuccess
 }
