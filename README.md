@@ -48,7 +48,8 @@ _______
 1. I'd love to have a way for someone who creates a mood-ring to send a mood-ring invitation for a specific ring. I feel like entering the group ID is a little bit clunky.
 2. Really excited about doing more styling on this. I want to make the color gradient of the mood-ring banner responsive to the average mood of the ring.
 3. I like the idea of a user only being able to submit one mood per group, because then the ring represents a finite moment in time, but am considering the idea of letting a user submit a new mood after an hour, or something like that.
-4. Maybe it can be an app one day.
+4. Add more specific user messages / alerts
+5. Maybe it can be an app one day.
 
 _______
 
