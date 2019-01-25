@@ -8,7 +8,7 @@ const store = require('../store.js')
 const onCreateGroup = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('we are here')
+  // console.log('we are here')
   // take this data and send it to our server
   // using an HTTP request (POST)
   api.createGroup(data)
@@ -19,7 +19,7 @@ const onCreateGroup = event => {
 const onCreateMood = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('we are here')
+  // console.log('we are here')
   // take this data and send it to our server
   // using an HTTP request (POST)
   api.createUserGroup(data)
@@ -29,7 +29,7 @@ const onCreateMood = event => {
 
 const onShowAllGroups = (event) => {
   if (event) { event.preventDefault() }
-  console.log('get groups')
+  // console.log('get groups')
   // take this data and send it to our server
   // using an HTTP request (POST)
   api.showAllGroups()
@@ -38,7 +38,7 @@ const onShowAllGroups = (event) => {
 }
 
 const onShowOneGroup = event => {
-  console.log('get one group')
+  // console.log('get one group')
   event.preventDefault()
   const input = getFormFields(event.target)
   const oneObject = input
@@ -52,7 +52,7 @@ const onShowOneGroup = event => {
 const onDeleteGroup = event => {
   event.preventDefault()
   const input = getFormFields(event.target)
-  console.log('delete group')
+  // console.log('delete group')
   const data = input
 
   // take this data and send it to our server
@@ -76,7 +76,7 @@ const onCreateUserGroup = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
   data.user_group.user_id = store.user.id
-  console.log('we are here', data)
+  // console.log('we are here', data)
   // take this data and send it to our server
   // using an HTTP request (POST)
   api.createUserGroup(data)
@@ -85,7 +85,7 @@ const onCreateUserGroup = event => {
 }
 
 const onUpdateGroup = function (event) {
-  console.log('update')
+  // console.log('update')
   event.preventDefault()
   const input = getFormFields(event.target)
   const groupObject = input

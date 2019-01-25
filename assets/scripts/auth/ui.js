@@ -9,7 +9,7 @@ const signUpSuccess = data => {
   $('#signupemail').val('')
   $('#signuppassword').val('')
   $('#signuppasswordconfirm').val('')
-  console.log('signUpSuccess ran. Data is :', data)
+  // console.log('signUpSuccess ran. Data is :', data)
 }
 
 const signUpFailure = error => {
@@ -19,12 +19,12 @@ const signUpFailure = error => {
   $('#signupemail').val('')
   $('#signuppassword').val('')
   $('#signuppasswordconfirm').val('')
-  console.error('signUpFailure ran. Error is :', error)
+  // console.error('signUpFailure ran. Error is :', error)
 }
 
 const signInSuccess = data => {
   store.user = data.user
-  console.log(store.user)
+  // console.log(store.user)
   $('#message').text('Signed in successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -44,7 +44,7 @@ const signInSuccess = data => {
   $('#user-group-create').show()
   $('#data').show()
   $('#groupmessage').html('')
-  console.log('signInSuccess ran. Data is :', data)
+  // console.log('signInSuccess ran. Data is :', data)
 }
 
 const signInFailure = error => {
@@ -53,7 +53,7 @@ const signInFailure = error => {
   $('#message').addClass('failure')
   $('#password').val('')
   $('#email').val('')
-  console.error('signInFailure ran. Error is :', error)
+  // console.error('signInFailure ran. Error is :', error)
 }
 
 const changePasswordSuccess = data => {
@@ -62,7 +62,7 @@ const changePasswordSuccess = data => {
   $('#message').addClass('success')
   $('#oldpassword').val('')
   $('#newpassword').val('')
-  console.log('changePasswordSuccess ran. Data is :', data)
+  // console.log('changePasswordSuccess ran. Data is :', data)
 }
 
 const changePasswordFailure = error => {
@@ -71,7 +71,7 @@ const changePasswordFailure = error => {
   $('#message').addClass('failure')
   $('#oldpassword').val('')
   $('#newpassword').val('')
-  console.error('changePasswordFailure ran. Error is :', error)
+  // console.error('changePasswordFailure ran. Error is :', error)
 }
 
 const signOutSuccess = data => {
@@ -79,7 +79,7 @@ const signOutSuccess = data => {
   store.user = null
   $('#message').removeClass()
   $('#message').addClass('success')
-  console.log('signOutSuccess ran. Data is :', data)
+  // console.log('signOutSuccess ran. Data is :', data)
   $('#sign-out').hide()
   $('#sign-in').show()
   $('#sign-up').show()
@@ -100,7 +100,7 @@ const signOutFailure = error => {
   $('#message').text('Error on sign out')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.error('signOutFailure ran. Error is :', error)
+  // console.error('signOutFailure ran. Error is :', error)
 }
 
 module.exports = {

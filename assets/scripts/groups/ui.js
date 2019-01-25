@@ -5,7 +5,7 @@ const api = require('./api.js')
 
 const createGroupSuccess = data => {
   store.group = data.group.id
-  console.log(data.group.id)
+  // console.log(data.group.id)
   $('#ringname').val('')
   $('#message').text('')
   $('#updatemessage').val('')
@@ -14,13 +14,9 @@ const createGroupSuccess = data => {
   api.showAllGroups()
 }
 const createGroupFailure = data => {
-  // $('#message').text('Failure on scheme create')
-  // $('#message').removeClass()
-  // $('#message').addClass('failure')
+  $('#groupmessage').html('Failure on group create')
   $('#ringname').val('')
   $('#updatemessage').val('')
-  // console.error('did not run. Data is :', data)
-  // console.log(data)
 }
 
 const deleteGroupSuccess = data => {
@@ -41,7 +37,7 @@ const deleteGroupFailure = data => {
   $('#deletemessage').addClass('success')
   $('#delete-input').val('')
   $('#updatemessage').val('')
-  console.log('deleteScheme ran. Data is :', data)
+  // console.log('deleteScheme ran. Data is :', data)
   api.showAllGroups()
     .then(showAllGroupsSuccess)
 }
@@ -52,22 +48,15 @@ const createUserGroupSuccess = data => {
   $('#moodbox_id').val('')
   $('#updatemessage').val('')
   $('#message').text('')
-  console.log('createUserGroup ran. Data is :', data)
+  // console.log('createUserGroup ran. Data is :', data)
   $('.mood_id').hide()
   $('.group_id').show()
   $('#group_id_formfield').val('')
 }
 
-// const deleteUserGroupSuccess = data => {
-//   store.user_groups = data.user_groups
-//   $('#groupmessage').text(`You've exited ${data.user_group.group.name}. The average mood in there is now ${data.user_group.group.averagemood} `)
-//
-//   console.log('deleteUserGroup ran. Data is :', data)
-// }
-
 const createUserGroupFailure = data => {
   store.user_groups = data.user_groups
-  console.error('createUserGroup did not run. Data is :', data)
+  // console.error('createUserGroup did not run. Data is :', data)
   $('.mood_id').hide()
   $('.group_id').show()
   $('#groupmessage').text(`Try again please`)
@@ -77,12 +66,12 @@ const createUserGroupFailure = data => {
 
 const createMoodSuccess = data => {
   store.moods = data.moods
-  console.log('createMood ran. Data is :', data)
+  // console.log('createMood ran. Data is :', data)
 }
 
 const createMoodFailure = data => {
   store.moods = data.moods
-  console.error('createMood did not run. Data is :', data)
+  // console.error('createMood did not run. Data is :', data)
 }
 
 const showAllGroupsSuccess = data => {
@@ -120,7 +109,7 @@ const updateGroupSuccess = id => {
   $('#group-id-update').val('')
   $('#name-update').val('')
   $('#updatemessage').text('Successfuly updated group')
-  console.log('updateScheme ran. Data is :', id)
+  // console.log('updateScheme ran. Data is :', id)
   // update a group/s name and then run showallgroups
   api.showAllGroups()
     .then(showAllGroupsSuccess)
@@ -134,7 +123,7 @@ const updateGroupFailure = id => {
   $('#updatemessage').text('Could not update the mood ring. Only ring owners can change names.')
   $('#submitmessage').removeClass()
   $('#submitmessage').addClass('success')
-  console.log('updateScheme ran. Data is :', id)
+  // console.log('updateScheme ran. Data is :', id)
 }
 
 const showOneGroupSuccess = function (group) {
