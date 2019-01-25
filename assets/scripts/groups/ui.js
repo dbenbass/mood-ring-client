@@ -131,7 +131,8 @@ const showOneGroupSuccess = function (group) {
   const groupHTML = (`
     <h1>${group.group.name}</h1>
     <p>ID: ${group.group.id}</p>
-    <p>with ${group.group.numberofparticipants}member/s</p>
+    <p>Number of members: ${group.group.numberofparticipants}</p>
+    <p>Average mood: ${group.group.averagemood}</p>
     <br>
     `)
   $('#data').html(groupHTML)
