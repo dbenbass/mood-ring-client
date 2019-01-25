@@ -23,6 +23,11 @@ _______
 8. The user can log out and change their password.
 _______
 
+
+<img src="/public/moodring.jpg">
+
+_______
+
 <b>Some Thoughts / Planning</b>
 
 I thought it would be interesting to create an app that focused on the general "vibe" of a group of people. I was curious to see how behavior would change knowing that the mood of a group was low.
