@@ -101,6 +101,8 @@ const showAllGroupsSuccess = data => {
     const groupHTML = (`
       <h1>${group.name}</h1>
       <p>ID: ${group.id}</p>
+      <p>Number of members: ${group.numberofparticipants}</p>
+
       <br>
       `)
     $('#data').append(groupHTML)
@@ -139,7 +141,8 @@ const showOneGroupSuccess = function (group) {
     <p>with ${group.group.numberofparticipants}member/s</p>
     <br>
     `)
-  $('#data').append(groupHTML)
+  $('#data').html(groupHTML)
+  $('#message').html(`You are currently viewing the mood ring "${group.group.name}"`)
 }
 module.exports = {
   createGroupSuccess,
