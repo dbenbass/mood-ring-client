@@ -92,6 +92,7 @@ const signOutSuccess = data => {
   $('#user-group-create').hide()
   $('#data').hide()
   $('#groupmessage').html('')
+  $('#deletemessage').html('')
 }
 
 const signOutFailure = error => {
