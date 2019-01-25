@@ -44,7 +44,7 @@ const deleteGroupFailure = data => {
 
 const createUserGroupSuccess = data => {
   store.user_groups = data.user_groups
-  $('#groupmessage').text(`You've joined ${data.user_group.group.name}. The average mood in here is ${data.user_group.group.averagemood}. ${data.user_group.group.numberofparticipants} other members are in this group. `)
+  $('#groupmessage').text(`You've joined ${data.user_group.group.name}. The average mood in here is ${data.user_group.group.averagemood}. ${data.user_group.group.numberofparticipants} member(s) in this group. `)
   $('#moodbox_id').val('')
   $('#updatemessage').val('')
   $('#message').text('')
