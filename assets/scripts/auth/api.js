@@ -41,7 +41,6 @@ const signOut = () => {
 }
 
 module.exports = {
-//  createGame,
   signUp,
   signIn,
   changePassword,

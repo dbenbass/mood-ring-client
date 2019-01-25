@@ -1,6 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 
-html { height: 100%; }
+html {
+  height: 100%;
+}
 
 body {
   background: #333;
@@ -15,10 +17,13 @@ body {
   background-color: yellow;
 }
 
+h1 {
+  color: lightpink;
+}
 
-
-h1 { color: lightpink;}
-h5 { font-size: 20vw; }
+h5 {
+  font-size: 20vw;
+}
 
 .linear-wipe {
   text-align: center;
@@ -29,7 +34,6 @@ h5 { font-size: 20vw; }
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
   animation: shine 1s linear infinite;
   @keyframes shine {
     to {

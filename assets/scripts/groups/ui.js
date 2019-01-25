@@ -8,6 +8,7 @@ const createGroupSuccess = data => {
   console.log(data.group.id)
   $('#ringname').val('')
   $('#message').text('')
+  $('#updatemessage').val('')
   $('#groupmessage').html(`Your mood ring is called ${data.group.name}. Please enter ID ${data.group.id} below to join the ring!`)
   // console.log('createGroup ran. Data is :', data)
   api.showAllGroups()
@@ -17,26 +18,29 @@ const createGroupFailure = data => {
   // $('#message').removeClass()
   // $('#message').addClass('failure')
   $('#ringname').val('')
+  $('#updatemessage').val('')
   // console.error('did not run. Data is :', data)
   // console.log(data)
 }
 
 const deleteGroupSuccess = data => {
   $('#groupmessage').text('')
-  $('#deletemessage').text(`mood ring was deleted.`)
-  $('#deletemessage').removeClass()
-  $('#deletemessage').addClass('success')
+  $('#updatemessage').text(`mood ring was deleted.`)
+  $('#updatemessage').removeClass()
+  $('#updatemessage').addClass('success')
   $('#delete-input').val('')
+  $('#updatemessage').val('')
   // console.log('deleteScheme ran. Data is :', data)
   api.showAllGroups()
     .then(showAllGroupsSuccess)
 }
 
 const deleteGroupFailure = data => {
-  $('#message').text('Error in deleting group')
+  $('#updatemessage').text('Error in deleting group')
   $('#deletemessage').removeClass()
   $('#deletemessage').addClass('success')
   $('#delete-input').val('')
+  $('#updatemessage').val('')
   console.log('deleteScheme ran. Data is :', data)
   api.showAllGroups()
     .then(showAllGroupsSuccess)
@@ -46,6 +50,7 @@ const createUserGroupSuccess = data => {
   store.user_groups = data.user_groups
   $('#groupmessage').text(`You've joined ${data.user_group.group.name}. The average mood in here is ${data.user_group.group.averagemood}. ${data.user_group.group.numberofparticipants} other members are in this group. `)
   $('#moodbox_id').val('')
+  $('#updatemessage').val('')
   $('#message').text('')
   console.log('createUserGroup ran. Data is :', data)
   $('.mood_id').hide()
@@ -67,6 +72,7 @@ const createUserGroupFailure = data => {
   $('.group_id').show()
   $('#groupmessage').text(`Try again please`)
   $('#group_id_formfield').val('')
+  $('#updatemessage').val('')
 }
 
 const createMoodSuccess = data => {
@@ -82,7 +88,7 @@ const createMoodFailure = data => {
 const showAllGroupsSuccess = data => {
   store.groups = data.groups
   // console.log(store.schemes)
-  $('#message').html('You are currently viewing all rings')
+  $('#showallmessage').html('You are currently viewing all rings')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#data').html('')
@@ -113,9 +119,7 @@ const updateGroupSuccess = id => {
   store.groups = id.groups
   $('#group-id-update').val('')
   $('#name-update').val('')
-  $('#message').text('Successfuly updated group')
-  $('#submitmessage').removeClass()
-  $('#submitmessage').addClass('success')
+  $('#updatemessage').text('Successfuly updated group')
   console.log('updateScheme ran. Data is :', id)
   // update a group/s name and then run showallgroups
   api.showAllGroups()
@@ -127,14 +131,13 @@ const updateGroupFailure = id => {
   store.groups = id.groups
   $('#group-id-update').val('')
   $('#name-update').val('')
-  $('#message').text('Could not update the mood ring. Only ring owners can change names.')
+  $('#updatemessage').text('Could not update the mood ring. Only ring owners can change names.')
   $('#submitmessage').removeClass()
   $('#submitmessage').addClass('success')
   console.log('updateScheme ran. Data is :', id)
 }
 
 const showOneGroupSuccess = function (group) {
-  console.log(group.group)
   const groupHTML = (`
     <h1>${group.group.name}</h1>
     <p>ID: ${group.group.id}</p>
@@ -142,8 +145,19 @@ const showOneGroupSuccess = function (group) {
     <br>
     `)
   $('#data').html(groupHTML)
-  $('#message').html(`You are currently viewing the mood ring "${group.group.name}"`)
+  $('#onemoodid').val('')
+  $('#updatemessage').text('')
+  $('#showallmessage').html(`You are currently viewing the mood ring "${group.group.name}"`)
 }
+
+const showOneGroupFailure = id => {
+  store.groups = id.groups
+  $('#group-id-update').val('')
+  $('#name-update').val('')
+  $('#updatemessage').val('')
+  $('#message').text('Could not show that group. Please make sure that the ID number exists.')
+}
+
 module.exports = {
   createGroupSuccess,
   createGroupFailure,
@@ -156,6 +170,7 @@ module.exports = {
   deleteGroupFailure,
   updateGroupSuccess,
   updateGroupFailure,
-  showOneGroupSuccess
+  showOneGroupSuccess,
+  showOneGroupFailure
   // deleteUserGroupSuccess
 }

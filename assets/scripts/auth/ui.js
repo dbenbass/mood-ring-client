@@ -90,9 +90,10 @@ const signOutSuccess = data => {
   $('#group-index').hide()
   $('#group-show').hide()
   $('#user-group-create').hide()
-  $('#data').hide()
+  $('#data').html('')
   $('#groupmessage').html('')
   $('#deletemessage').html('')
+  $('#showallmessage').html('')
 }
 
 const signOutFailure = error => {
