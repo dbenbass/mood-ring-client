@@ -9,7 +9,7 @@ const createGroupSuccess = data => {
   $('#ringname').val('')
   $('#message').text('')
   $('#groupmessage').html(`Your mood ring is called ${data.group.name}. Please enter ID ${data.group.id} below to join the ring!`)
-  console.log('createGroup ran. Data is :', data)
+  // console.log('createGroup ran. Data is :', data)
   api.showAllGroups()
 }
 const createGroupFailure = data => {
@@ -17,8 +17,8 @@ const createGroupFailure = data => {
   // $('#message').removeClass()
   // $('#message').addClass('failure')
   $('#ringname').val('')
-  console.error('did not run. Data is :', data)
-  console.log(data)
+  // console.error('did not run. Data is :', data)
+  // console.log(data)
 }
 
 const deleteGroupSuccess = data => {
@@ -27,7 +27,7 @@ const deleteGroupSuccess = data => {
   $('#deletemessage').removeClass()
   $('#deletemessage').addClass('success')
   $('#delete-input').val('')
-  console.log('deleteScheme ran. Data is :', data)
+  // console.log('deleteScheme ran. Data is :', data)
   api.showAllGroups()
     .then(showAllGroupsSuccess)
 }
@@ -53,6 +53,13 @@ const createUserGroupSuccess = data => {
   $('#group_id_formfield').val('')
 }
 
+// const deleteUserGroupSuccess = data => {
+//   store.user_groups = data.user_groups
+//   $('#groupmessage').text(`You've exited ${data.user_group.group.name}. The average mood in there is now ${data.user_group.group.averagemood} `)
+//
+//   console.log('deleteUserGroup ran. Data is :', data)
+// }
+
 const createUserGroupFailure = data => {
   store.user_groups = data.user_groups
   console.error('createUserGroup did not run. Data is :', data)
@@ -70,8 +77,6 @@ const createMoodSuccess = data => {
 const createMoodFailure = data => {
   store.moods = data.moods
   console.error('createMood did not run. Data is :', data)
-  $('#groupmessage').text(`Try again please`)
-
 }
 
 const showAllGroupsSuccess = data => {
@@ -104,20 +109,9 @@ const showAllGroupsSuccess = data => {
 
 const updateGroupSuccess = id => {
   store.groups = id.groups
-  $('#group-name-update').val('')
-  $('#groupmessage').text('Successfuly updated group')
-  $('#submitmessage').removeClass()
-  $('#submitmessage').addClass('success')
-  console.log('updateScheme ran. Data is :', id)
-  // update a group/s name and then run showallgroups
-  api.showAllGroups()
-    .then(showAllGroupsSuccess)
-}
-
-const updateGroupFailure = id => {
-  store.groups = id.groups
-  $('#group-name-update').val('')
-  $('#groupmessage').text('You cannot edit this mood ring. Keep in mind that you can only do so if you are the creator of the ring.')
+  $('#group-id-update').val('')
+  $('#name-update').val('')
+  $('#message').text('Successfuly updated group')
   $('#submitmessage').removeClass()
   $('#submitmessage').addClass('success')
   console.log('updateScheme ran. Data is :', id)
@@ -127,15 +121,25 @@ const updateGroupFailure = id => {
   //    .catch()
 }
 
+const updateGroupFailure = id => {
+  store.groups = id.groups
+  $('#group-id-update').val('')
+  $('#name-update').val('')
+  $('#message').text('Could not update the mood ring. Only ring owners can change names.')
+  $('#submitmessage').removeClass()
+  $('#submitmessage').addClass('success')
+  console.log('updateScheme ran. Data is :', id)
+}
+
 const showOneGroupSuccess = function (group) {
   console.log(group.group)
   const groupHTML = (`
     <h1>${group.group.name}</h1>
-    ${group.group.numberofparticipants} users belong to this ring. It's average mood is ${group.group.averagemood}.<br>
-    ID: ${group.group.id}
+    <p>ID: ${group.group.id}</p>
+    <p>with ${group.group.numberofparticipants}member/s</p>
     <br>
     `)
-  $('#data').html(groupHTML)
+  $('#data').append(groupHTML)
 }
 module.exports = {
   createGroupSuccess,
@@ -150,4 +154,5 @@ module.exports = {
   updateGroupSuccess,
   updateGroupFailure,
   showOneGroupSuccess
+  // deleteUserGroupSuccess
 }
