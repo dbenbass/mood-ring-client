@@ -1,18 +1,13 @@
-mood-ring client
+<b>mood-ring client</b>
 
 _______
 
 
-Front end of an app that allows users to assess the average mood of a group of people.
+<b>mood-ring is an app that allows users to assess the average mood of a group of people.</b>
 
-See the back end repository here -
-https://github.com/dbenbass/mood-ring
+See the back end repository <a href="https://github.com/dbenbass/mood-ring"> here</a>.
 
-Deployed front end -
-https://dbenbass.github.io/mood-ring-client
-
-Deployed back end -
-https://rocky-bastion-73525.herokuapp.com/
+Here are the links to the <a href="https://dbenbass.github.io/mood-ring-client"> deployed front end</a>, and the <a href="https://rocky-bastion-73525.herokuapp.com/"> deployed back end </a>
 
 _______
 
