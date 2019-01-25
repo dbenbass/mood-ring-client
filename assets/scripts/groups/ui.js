@@ -77,7 +77,7 @@ const createMoodFailure = data => {
 const showAllGroupsSuccess = data => {
   store.groups = data.groups
   // console.log(store.schemes)
-  $('#showallmessage').html('You are currently viewing all rings')
+  $('#showallmessage').html('You are currently viewing all mood-rings')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#data').html('')
@@ -97,6 +97,7 @@ const showAllGroupsSuccess = data => {
       <h1>${group.name}</h1>
       <p>ID: ${group.id}</p>
       <p>Number of members: ${group.numberofparticipants}</p>
+      <p>Mood: ${group.averagemood}</p>
 
       <br>
       `)
