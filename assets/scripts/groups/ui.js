@@ -2,7 +2,6 @@
 
 const store = require('../store.js')
 const api = require('./api.js')
-
 const createGroupSuccess = data => {
   store.group = data.group.id
   // console.log(data.group.id)
@@ -52,6 +51,68 @@ const createUserGroupSuccess = data => {
   $('.mood_id').hide()
   $('.group_id').show()
   $('#group_id_formfield').val('')
+  //
+  //
+  // const day = data.user_group.group.averagemood.getDay;
+  // switch (day) {
+  //     case 1:
+  //         console.log("Happy Monday!");
+  //         break;
+  //     case 2:
+  //         console.log("It's Tuesday. You got this!");
+  //         break;
+  //     case 3:
+  //         console.log("Hump day already!");
+  //         break;
+  //     case 4:
+  //         console.log("Just one more day 'til the weekend!");
+  //         break;
+  //     case 5:
+  //         console.log("Happy Friday!");
+  //         break;
+  //     case 6:
+  //         console.log("Have a wonderful Saturday!");
+  //         break;
+  //     case 7:
+  //         console.log("It's Sunday, time to relax!");
+  //         break;
+  //     default:
+  //         console.log("Something went horribly wrong...");
+const moodColor = Math.round(Number(data.user_group.group.averagemood))
+console.log(moodColor)
+console.log(typeof moodColor)
+  switch (moodColor) {
+    case 0:
+      $('h5').removeClass().addClass('black')
+      console.log('black')
+      break
+    case 1:
+      $('h5').removeClass().addClass('blue')
+      console.log('blue')
+      break
+    case 2:
+      $('h5').removeClass().addClass('green')
+      console.log('green')
+      break
+    case 3:
+      $('h5').removeClass().addClass('yellow')
+      console.log('yellow')
+      break
+    case 4:
+      $('h5').removeClass().addClass('orange')
+      console.log('orange')
+      break
+    case 5:
+      $('h5').removeClass().addClass('red')
+      console.log('red')
+      break
+    case 6:
+      $('h5').removeClass().addClass('purple')
+      console.log('purple')
+      break
+    default:
+      console.log('Something went horribly wrong...')
+  }
 }
 
 const createUserGroupFailure = data => {
