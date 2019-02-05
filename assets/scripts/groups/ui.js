@@ -87,30 +87,49 @@ console.log(typeof moodColor)
       console.log('black')
       break
     case 1:
-      $('h5').removeClass().addClass('blue')
-      console.log('blue')
+      $('h5').removeClass().addClass('grey')
+      console.log('grey')
       break
     case 2:
       $('h5').removeClass().addClass('green')
       console.log('green')
       break
     case 3:
+      $('h5').removeClass().addClass('midblue')
+      console.log('midblue')
+      break
+    case 4:
+      $('h5').removeClass().addClass('lightblue')
+      console.log('lightblue')
+      break
+    case 5:
+      $('h5').removeClass().addClass('lightbluegreen')
+      console.log('lightbluegreen')
+      break
+    case 6:
       $('h5').removeClass().addClass('yellow')
       console.log('yellow')
       break
-    case 4:
+    case 7:
       $('h5').removeClass().addClass('orange')
       console.log('orange')
       break
-    case 5:
-      $('h5').removeClass().addClass('red')
-      console.log('red')
-      break
-    case 6:
+    case 8:
       $('h5').removeClass().addClass('purple')
       console.log('purple')
       break
+    case 9:
+      $('h5').removeClass().addClass('pinkpurple')
+      console.log('purple')
+      break
+    case 10:
+      $('h5').removeClass().addClass('pinkorange')
+      console.log('pinkorange')
+      break
+
     default:
+      $('h5').removeClass().addClass('linear-wipe')
+      console.log('default')
       console.log('Something went horribly wrong...')
   }
 }

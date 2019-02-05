@@ -94,6 +94,7 @@ const signOutSuccess = data => {
   $('#groupmessage').html('')
   $('#deletemessage').html('')
   $('#showallmessage').html('')
+  $('h5').removeClass().toggleClass('linear-wipe', 100000)
 }
 
 const signOutFailure = error => {
