@@ -22,13 +22,13 @@ h1 {
 }
 
 h5 {
-  font-size: 20vw;
+  font-size: 19vw;
 }
 
 input {
-    border-radius: 20px;
-  	-webkit-border-radius: 10px;
-  	-moz-border-radius: 10px;
+    // border-radius: 0px;
+  	// -webkit-border-radius: 10px;
+  	// -moz-border-radius: 10px;
   	margin: 0px 0px 10px 0px;
   	border: 1px solid #a8dff5;
   	padding: 3px;
@@ -67,6 +67,7 @@ label {
   opacity: 0.6;
   transition: 0.3s;
   display: inline-block;
+  cursor: sw-resize;
 }
 
 .button:hover {
