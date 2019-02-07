@@ -25,11 +25,51 @@ h5 {
   font-size: 19vw;
 }
 
-.modal {
-  position: fixed;
-  top: 50%;
+h4 {
+  text-align: center;
+}
+
+.modalblah {
+  background: rgba(51, 51, 51, 0.19);
+  border-radius: 0;
+  display: inline-block;
+  outline: none !important;
+  border: none;
+  float: left;
+  letter-spacing: 2px;
+  font-size: 12px;
+  float: center;
+  // width: 180px;
+  color: #a8dff5;
+  opacity: 0.9;
+
+}
+
+.modalheading {
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.aboutmodal {
+  background: rgba(51, 51, 51, 0.90);
+  border-radius: 0;
+  // display: inline-block;
+  outline: none !important;
+  position: absolute;
+  // float: left;
+  top: 40%;
+  right: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 0;
+  transform: translate(-50%, -50%) !important;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
+}
+
+.no-border{
+  border:none;
 }
 
 input {

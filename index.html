@@ -19,33 +19,11 @@
   <nav class="first-navigation">
   <div class="menu-wrap">
   <ul class="menu" id="menu">
-    <li><a href="#" data-toggle="modal" data-target="#modal">About</a></li>
-    <!-- <div class="modal-dialog"> -->
-
-      <!-- Modal -->
-      <div id="modal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-      <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Modal Header</h4>
-            </div>
-            <div class="modal-body">
-              <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <li><a href="#" data-toggle="modal" data-target="#myModal">About</a></li>
     <li><a href="#">Sign Up</a></li>
     <li><a href="#">Sign in </a></li>
   </ul>
 </div>
-
-<div class="modal" id="modal"></div>
   <!-- // main navigation -->
   <nav class="main-navigation">
   <div class="menu-wrap">
@@ -72,6 +50,44 @@
   </ul>
 </div>
 </nav>
+
+<!-- The Modal -->
+<div class="modal fade aboutmodal" id="myModal" data-backdrop="false">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content modalblah">
+
+      <!-- Modal Header -->
+      <div class="modal-header no-border modalheading">
+        <h4 class="modal-title">About Mood Ring</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Mood ring is an app which allows you to get the general mood of your determied group of people.
+        Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
+        break? Mood ring is an app which allows you to get the general mood of your determied group of people.
+        Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
+        break?Mood ring is an app which allows you to get the general mood of your determied group of people.
+        Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
+        break?Mood ring is an app which allows you to get the general mood of your determied group of people.
+        Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
+        break?Mood ring is an app which allows you to get the general mood of your determied group of people.
+        Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
+        break?Mood ring is an app which allows you to get the general mood of your determied group of people.
+        Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
+        break?
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer no-border">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
   <h5 class="linear-wipe">MOOD <br> RING :) (:</h5>
     <p id="deletemessage"></p>
     <p id="message"></p>
@@ -194,6 +210,7 @@
               </fieldset>
             </form>
             <br>
+
 </body>
 
 </html>
