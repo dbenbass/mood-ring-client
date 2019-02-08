@@ -2,6 +2,7 @@
 
 const store = require('../store.js')
 const api = require('./api.js')
+
 const createGroupSuccess = data => {
   store.group = data.group.id
   // console.log(data.group.id)
@@ -9,7 +10,7 @@ const createGroupSuccess = data => {
   $('#message').text('')
   $('#updatemessage').val('')
   $('#groupmessage').html(`Your mood ring is called ${data.group.name}. Please enter ID ${data.group.id} below to join the ring!`)
-  // console.log('createGroup ran. Data is :', data)
+  console.log('createGroup ran. Data is :', data)
   api.showAllGroups()
 }
 const createGroupFailure = data => {
@@ -47,7 +48,7 @@ const createUserGroupSuccess = data => {
   $('#moodbox_id').val('')
   $('#updatemessage').val('')
   $('#message').text('')
-  // console.log('createUserGroup ran. Data is :', data)
+  console.log('createUserGroup ran. Data is :', data)
   $('.mood_id').hide()
   $('.group_id').show()
   $('#group_id_formfield').val('')
@@ -157,6 +158,7 @@ const createMoodFailure = data => {
 const showAllGroupsSuccess = data => {
   store.groups = data.groups
   // console.log(store.schemes)
+  console.log('showAllGroups ran. Data is :', data)
   $('#showallmessage').html('You are currently viewing all mood-rings')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -183,6 +185,22 @@ const showAllGroupsSuccess = data => {
       `)
     $('#data').append(groupHTML)
   })
+}
+
+const showOwnerGroupsSuccess = (data) => {
+  console.log('OwnerGroup', data)
+  // store.user_groups = data.user_groups
+  // const groupsAll = data.user_groups
+  // const ownerGroups = []
+  // groupsAll.forEach(function (user_group) {
+  //   if (user_group.user.id === store.user.id) {
+  //     ownerGroups.push(user_group)
+  //   }
+  //   const showOwnerGroupsHtml = (`
+  //   <h1>${data.user_group.user.id}</h1>
+  //   `)
+  //   $('#data').append(showOwnerGroupsHtml)
+  // })
 }
 
 const updateGroupSuccess = id => {
@@ -242,6 +260,8 @@ module.exports = {
   updateGroupSuccess,
   updateGroupFailure,
   showOneGroupSuccess,
-  showOneGroupFailure
+  showOneGroupFailure,
+  showOwnerGroupsSuccess
+  // showOwnerGroupsFailure
   // deleteUserGroupSuccess
 }

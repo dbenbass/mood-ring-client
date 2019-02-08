@@ -47,6 +47,16 @@ const showAllGroups = () => {
   })
 }
 
+const showOwnerGroups = () => {
+  return $.ajax({
+    url: config.apiUrl + '/groups?owner_ring=bleh',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const showOneGroup = function (oneObject) {
   return $.ajax({
     url: config.apiUrl + `/groups/${oneObject.group.id}`,
@@ -95,6 +105,7 @@ module.exports = {
   createUserGroup,
   createMood,
   showAllGroups,
+  showOwnerGroups,
   deleteGroup,
   updateGroup,
   showOneGroup

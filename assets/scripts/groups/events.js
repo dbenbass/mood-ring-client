@@ -49,6 +49,14 @@ const onShowOneGroup = event => {
     .catch(ui.showOneGroupFailure) // if your request failed
 }
 
+const onShowOwnerGroups = (event) => {
+  if (event) { event.preventDefault() }
+  console.log('owner groups')
+  api.showOwnerGroups()
+    .then(ui.showOwnerGroupsSuccess) // if your request was succesful
+    .catch(ui.showOwnerGroupsFailure) // if your request failed
+}
+
 const onDeleteGroup = event => {
   event.preventDefault()
   const input = getFormFields(event.target)
@@ -103,6 +111,7 @@ module.exports = {
   onShowAllGroups,
   onDeleteGroup,
   onUpdateGroup,
-  onShowOneGroup
+  onShowOneGroup,
+  onShowOwnerGroups
   // onDeleteUserGroup
 }

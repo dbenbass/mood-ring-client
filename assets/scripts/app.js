@@ -29,6 +29,7 @@ $(() => {
   $('#group-delete').on('submit', groupEvents.onDeleteGroup)
   $('#groups-update').on('submit', groupEvents.onUpdateGroup)
   $('#group-show').on('submit', groupEvents.onShowOneGroup)
+  $('#owner-group-index').on('submit', groupEvents.onShowOwnerGroups)
   $('#change-password').hide()
   $('#group-create-div').hide()
   $('#user-group-create-div').hide()
