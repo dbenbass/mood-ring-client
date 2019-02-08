@@ -46,6 +46,9 @@ const signInSuccess = data => {
   $('#user-group-create').show()
   $('#data').show()
   $('#groupmessage').html('')
+  $('.first-navigation').hide()
+  $('.main-navigation').show()
+
   // console.log('signInSuccess ran. Data is :', data)
 }
 
