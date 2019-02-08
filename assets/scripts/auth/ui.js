@@ -9,6 +9,8 @@ const signUpSuccess = data => {
   $('#signupemail').val('')
   $('#signuppassword').val('')
   $('#signuppasswordconfirm').val('')
+  $('#sign-up').fadeOut()
+  $('#sign-in').fadeIn()
   // console.log('signUpSuccess ran. Data is :', data)
 }
 

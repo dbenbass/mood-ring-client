@@ -10,6 +10,13 @@ const authEvents = require('./auth/events.js')
 const groupEvents = require('./groups/events.js')
 
 $(() => {
+  // $('#sign-up').hide()
+  $('#sign-up-link').click(function () {
+    $('#sign-up').fadeIn()
+  })
+  $('#sign-in-link').click(function () {
+    $('#sign-in').fadeIn()
+  })
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
@@ -26,7 +33,6 @@ $(() => {
   $('#group-create-div').hide()
   $('#user-group-create-div').hide()
   $('.main-navigation').hide()
-
   $('.mood_id').hide()
   $('#group_id').click(function () {
     $('.mood_id').show()
