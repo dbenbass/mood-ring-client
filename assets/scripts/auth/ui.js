@@ -84,13 +84,14 @@ const changePasswordFailure = error => {
 
 const signOutSuccess = data => {
   $('#message').text('Signed out successfully')
+  $('#message').fadeIn(2000).fadeOut(2000)
   store.user = null
   $('#message').removeClass()
   $('#message').addClass('success')
   // console.log('signOutSuccess ran. Data is :', data)
   $('#sign-out').hide()
-  $('#sign-in').show()
-  $('#sign-up').show()
+  // $('#sign-in').show()
+  // $('#sign-up').show()
   $('#change-password').hide()
   $('#group-create').hide()
   $('#groups-update').hide()
@@ -103,6 +104,8 @@ const signOutSuccess = data => {
   $('#deletemessage').html('')
   $('#showallmessage').html('')
   $('h5').removeClass().toggleClass('linear-wipe', 100000)
+  $('.main-navigation').hide()
+  $('.first-navigation').show()
 }
 
 const signOutFailure = error => {

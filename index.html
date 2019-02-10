@@ -36,7 +36,6 @@
         <li><a href="#">Plumbing</a></li>
         <li class="menu-item-has-children"><a href="#">Heating</a>
           <ul class="sub-menu">
-            <li><a href="#" id="join-ring-link">Join a Ring</a></li>
             <li><a href="#">Config</a></li>
             <li><a href="#">Sign Out</a></li>
           </ul>
@@ -47,7 +46,7 @@
     <li><a href="#" id="join-ring-link">Join a Ring </a></li>
     <li><a href="#" id="create-ring-link">Create a Ring </a></li>
 
-    <li><a href="#">Sign Out</a></li>
+    <li><a href="#" id="sign-out-link">Sign Out</a></li>
   </ul>
 </div>
 </nav>
@@ -86,6 +85,39 @@
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
 
+    </div>
+  </div>
+</div>
+
+<!-- Update Modal -->
+<div class="modal fade changemodal" id="changeModal" data-backdrop="false">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content modalblah">
+
+      <!-- Modal Header -->
+      <div class="modal-header no-border modalheading">
+        <h4 class="modal-title">Change name
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </h4>
+      </div>
+
+      <!-- Modal body -->
+    <form id="groups-update">
+      <fieldset>
+        <h1>Change name</h1>
+        edit your group by ID number.
+        <br>
+        <input type="text" name="group[id]" placeholder="ID here" id="group-id-update">
+        <br>
+        <input type="text" name="group[name]" placeholder="Name" id="name-update">
+        <br>
+        <input type="submit" value="Edit group" id="groupsupdate">
+
+      <!-- Modal footer -->
+      <div class="modal-footer no-border">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </form>
+      </div>
     </div>
   </div>
 </div>
@@ -129,7 +161,7 @@
       <p id="groupmessage">
         <p id="moodmessage">
           <div id="user-group-create-div">
-            <form id="user-group-create" class="hidden">
+            <form id="user-group-create">
               <fieldset>
                 <h1>Join a Ring</h1>
                 <input type="group id" name="user_group[group_id]" placeholder="Group ID" class="group_id" id="group_id_formfield">
@@ -150,14 +182,14 @@
           <br>
           <br>
 
-          <form id="owner-group-index" class="hidden">
+          <form id="owner-group-index">
             <fieldset>
               <input type="submit" value="Show all of YOUR Mood Rings">
           </form>
           </fieldset>
           <br>
           <br>
-
+<!--
           <form id="groups-update" class="hidden">
             <fieldset>
               <h1>Change name</h1>
@@ -173,7 +205,7 @@
           <br>
           <p id="updatemessage">
             <br>
-            <br>
+            <br> -->
 
             <form id="group-delete" class="hidden">
               <fieldset>

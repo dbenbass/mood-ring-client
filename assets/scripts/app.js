@@ -22,12 +22,12 @@ $(() => {
     $('#group-create-div').fadeIn()
   })
   $('#join-ring-link').click(function () {
-    $('#user-group-create').show()
+    $('#user-group-create-div').show()
   })
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#sign-out-link').on('click', authEvents.onSignOut)
   $('#group-create').on('submit', groupEvents.onCreateGroup)
   $('#mood-level').on('submit', groupEvents.onCreateMood)
   $('#user-group-create').on('submit', groupEvents.onCreateUserGroup)
@@ -39,7 +39,7 @@ $(() => {
   $('#owner-group-index').on('submit', groupEvents.onShowOwnerGroups)
   $('#change-password').hide()
   $('#group-create-div').hide()
-  // $('#user-group-create-div').hide()
+  $('#user-group-create-div').hide()
   $('.main-navigation').hide()
   $('.mood_id').hide()
   $('#group_id').click(function () {

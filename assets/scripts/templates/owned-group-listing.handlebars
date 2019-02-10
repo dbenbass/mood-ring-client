@@ -21,15 +21,19 @@
   {{log group}}
 
   <div>
-  <h1 data-id="{{group.id}}"> <small>Name: {{group.name}}</small></h1>
+  <h1 data-id="{{group.id}}"> <small>{{group.name}}</small></h1>
   <section data-id="{{group.id}}">
     <p>{{#if group.numberofparticipants}}
         Number of participants: {{group.numberofparticipants}}
       {{else}}
-        No author provided.
+        No participants.
       {{/if}}
+      <p>Group id: {{group.id}}
+      </p>
     </p>
-    <button id="deleteBooksButton" type="submit" class="btn btn-default delete-group">Remove</button>
+    <button id="deleteGroupsButton" type="submit" class="btn btn-default delete-group">Remove</button>
+    <button id="updateGroupsButton" type="submit" class="btn btn-default update-group" data-toggle="modal" data-target="#changeModal">Change name</button>
+
   </section>
 </div>
 

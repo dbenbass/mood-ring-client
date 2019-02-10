@@ -118,7 +118,7 @@ const onUpdateGroup = function (event) {
 }
 
 const addHandlers = () => {
-  $('#data').on('click', '#deleteBooksButton', onDeleteGroup)
+  $('#data').on('click', '#deleteGroupsButton', onDeleteGroup)
 }
 
 module.exports = {

@@ -5,12 +5,14 @@ const api = require('./api.js')
 const showOwnerGroupsTemplate = require('../templates/owned-group-listing.handlebars')
 
 const createGroupSuccess = data => {
-  store.group = data.group.id
-  // console.log(data.group.id)
+  store.groups = data.group.id
+  console.log(data.group.id)
+  $('#user-group-create-div').show()
   $('#ringname').val('')
   $('#message').text('')
   $('#updatemessage').val('')
   $('#groupmessage').html(`Your mood ring is called ${data.group.name}. Please enter ID ${data.group.id} below to join the ring!`)
+  $('')
   console.log('createGroup ran. Data is :', data)
   api.showAllGroups()
 }
@@ -28,7 +30,7 @@ const deleteGroupSuccess = data => {
   $('#delete-input').val('')
   $('#updatemessage').val('')
   // console.log('deleteScheme ran. Data is :', data)
-  api.showAllGroups()
+  api.showOwnerGroups()
     .then(showOwnerGroupsSuccess)
 }
 
@@ -51,6 +53,7 @@ const createUserGroupSuccess = data => {
   $('#message').text('')
   console.log('createUserGroup ran. Data is :', data)
   $('.mood_id').hide()
+  $('#group-create-div').hide()
   $('.group_id').show()
   $('#group_id_formfield').val('')
   //
