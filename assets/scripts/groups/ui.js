@@ -2,14 +2,18 @@
 
 const store = require('../store.js')
 const api = require('./api.js')
+const showOwnerGroupsTemplate = require('../templates/owned-group-listing.handlebars')
+
 const createGroupSuccess = data => {
-  store.group = data.group.id
-  // console.log(data.group.id)
+  store.groups = data.group.id
+  console.log(data.group.id)
+  $('#user-group-create-div').show()
   $('#ringname').val('')
   $('#message').text('')
   $('#updatemessage').val('')
   $('#groupmessage').html(`Your mood ring is called ${data.group.name}. Please enter ID ${data.group.id} below to join the ring!`)
-  // console.log('createGroup ran. Data is :', data)
+  $('')
+  console.log('createGroup ran. Data is :', data)
   api.showAllGroups()
 }
 const createGroupFailure = data => {
@@ -26,8 +30,8 @@ const deleteGroupSuccess = data => {
   $('#delete-input').val('')
   $('#updatemessage').val('')
   // console.log('deleteScheme ran. Data is :', data)
-  api.showAllGroups()
-    .then(showAllGroupsSuccess)
+  api.showOwnerGroups()
+    .then(showOwnerGroupsSuccess)
 }
 
 const deleteGroupFailure = data => {
@@ -38,7 +42,7 @@ const deleteGroupFailure = data => {
   $('#updatemessage').val('')
   // console.log('deleteScheme ran. Data is :', data)
   api.showAllGroups()
-    .then(showAllGroupsSuccess)
+    .then(showOwnerGroupsSuccess)
 }
 
 const createUserGroupSuccess = data => {
@@ -47,8 +51,9 @@ const createUserGroupSuccess = data => {
   $('#moodbox_id').val('')
   $('#updatemessage').val('')
   $('#message').text('')
-  // console.log('createUserGroup ran. Data is :', data)
+  console.log('createUserGroup ran. Data is :', data)
   $('.mood_id').hide()
+  $('#group-create-div').hide()
   $('.group_id').show()
   $('#group_id_formfield').val('')
   //
@@ -78,9 +83,9 @@ const createUserGroupSuccess = data => {
   //         break;
   //     default:
   //         console.log("Something went horribly wrong...");
-const moodColor = Math.round(Number(data.user_group.group.averagemood))
-console.log(moodColor)
-console.log(typeof moodColor)
+  const moodColor = Math.round(Number(data.user_group.group.averagemood))
+  console.log(moodColor)
+  console.log(typeof moodColor)
   switch (moodColor) {
     case 0:
       $('h5').removeClass().addClass('black')
@@ -157,6 +162,7 @@ const createMoodFailure = data => {
 const showAllGroupsSuccess = data => {
   store.groups = data.groups
   // console.log(store.schemes)
+  console.log('showAllGroups ran. Data is :', data)
   $('#showallmessage').html('You are currently viewing all mood-rings')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -185,6 +191,36 @@ const showAllGroupsSuccess = data => {
   })
 }
 
+const showOwnerGroupsSuccess = (data) => {
+  const showOwnerGroupsHtml = showOwnerGroupsTemplate({ groups: data.groups })
+  $('#data').empty()
+  $('#data').append(showOwnerGroupsHtml)
+  // $('#auth-message').text('')
+}
+// const showOwnerGroupsSuccess = (data) => {
+//   console.log('OwnerGroup', data)
+//   const ownerGroups = data.groups
+//   const allOwnerGroupsLoop = function (ownerGroups) {
+//     const ownerGroupsArray = []
+//     for (let i = 0; i <= ownerGroups.length; i++) {
+//       const ownerGroupPop = ownerGroups.pop()
+//       ownerGroupsArray.push(ownerGroupPop)
+//     }
+//     return ownerGroupsArray
+//   }
+//
+//   allOwnerGroupsLoop(ownerGroups).forEach(group => {
+//     const ownerGroupHTML = (`
+//       <h1>${group.name}</h1>
+//       <p>ID: ${group.id}</p>
+//       <p>Number of members: ${group.numberofparticipants}</p>
+//       <p>Mood: ${group.averagemood}</p>
+//
+//       <br>
+//       `)
+//     $('#data').append(ownerGroupHTML)
+//   })
+// }
 const updateGroupSuccess = id => {
   store.groups = id.groups
   $('#group-id-update').val('')
@@ -192,8 +228,8 @@ const updateGroupSuccess = id => {
   $('#updatemessage').text('Successfuly updated group')
   // console.log('updateScheme ran. Data is :', id)
   // update a group/s name and then run showallgroups
-  api.showAllGroups()
-    .then(showAllGroupsSuccess)
+  api.showOwnerGroups()
+    .then(showOwnerGroupsSuccess)
   //    .catch()
 }
 
@@ -242,6 +278,8 @@ module.exports = {
   updateGroupSuccess,
   updateGroupFailure,
   showOneGroupSuccess,
-  showOneGroupFailure
+  showOneGroupFailure,
+  showOwnerGroupsSuccess
+  // showOwnerGroupsFailure
   // deleteUserGroupSuccess
 }

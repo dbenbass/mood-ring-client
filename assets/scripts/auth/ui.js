@@ -3,12 +3,15 @@ const store = require('../store.js')
 
 const signUpSuccess = data => {
   $('#message').text('Signed up successfully')
+  $('#message').fadeOut(2000)
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#change-password').hide()
   $('#signupemail').val('')
   $('#signuppassword').val('')
   $('#signuppasswordconfirm').val('')
+  $('#sign-up').hide()
+  $('#sign-in').fadeIn()
   // console.log('signUpSuccess ran. Data is :', data)
 }
 
@@ -24,26 +27,31 @@ const signUpFailure = error => {
 
 const signInSuccess = data => {
   store.user = data.user
-  // console.log(store.user)
+  console.log(store.user)
   $('#message').text('Signed in successfully')
+  $('#message').fadeIn(2000).fadeOut(2000)
+
   $('#message').removeClass()
   $('#message').addClass('success')
-  $('#change-password').show()
-  $('#sign-out').show()
-  $('#group-create-div').show()
-  $('#user-group-create-div').show()
+  // $('#change-password').show()
+  // $('#sign-out').show()
+  // // $('#group-create-div').show()
+  // $('#user-group-create-div').show()
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#password').val('')
   $('#email').val('')
-  $('#group-create').show()
-  $('#groups-update').show()
-  $('#group-delete').show()
-  $('#group-index').show()
-  $('#group-show').show()
-  $('#user-group-create').show()
-  $('#data').show()
+  // $('#group-create').show()
+  // $('#groups-update').show()
+  // $('#group-delete').show()
+  // $('#group-index').show()
+  // $('#group-show').show()
+  // $('#user-group-create').show()
+  // $('#data').show()
   $('#groupmessage').html('')
+  $('.first-navigation').hide()
+  $('.main-navigation').show()
+
   // console.log('signInSuccess ran. Data is :', data)
 }
 
@@ -76,13 +84,14 @@ const changePasswordFailure = error => {
 
 const signOutSuccess = data => {
   $('#message').text('Signed out successfully')
+  $('#message').fadeIn(2000).fadeOut(2000)
   store.user = null
   $('#message').removeClass()
   $('#message').addClass('success')
   // console.log('signOutSuccess ran. Data is :', data)
   $('#sign-out').hide()
-  $('#sign-in').show()
-  $('#sign-up').show()
+  // $('#sign-in').show()
+  // $('#sign-up').show()
   $('#change-password').hide()
   $('#group-create').hide()
   $('#groups-update').hide()
@@ -95,6 +104,8 @@ const signOutSuccess = data => {
   $('#deletemessage').html('')
   $('#showallmessage').html('')
   $('h5').removeClass().toggleClass('linear-wipe', 100000)
+  $('.main-navigation').hide()
+  $('.first-navigation').show()
 }
 
 const signOutFailure = error => {

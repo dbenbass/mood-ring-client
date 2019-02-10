@@ -10,7 +10,12 @@ body {
   min-height: 100%;
   justify-content: center;
   align-items: center;
+  display: inline-block;
   color: white;
+}
+
+.hidden {
+  display: none; //transition
 }
 
 .mood_id {
@@ -22,7 +27,108 @@ h1 {
 }
 
 h5 {
-  font-size: 20vw;
+  font-size: 19vw;
+}
+
+h4 {
+  text-align: center;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+}
+
+.modalblah {
+  background: rgba(51, 51, 51, 0.19);
+  border-radius: 0;
+  display: inline-block;
+  outline: none !important;
+  border-style: outset;
+  border-color: #a8dff5;
+  float: left;
+  letter-spacing: 2px;
+  font-size: 12px;
+  float: center;
+  // width: 180px;
+  color: #a8dff5;
+  opacity: 0.9;
+}
+
+.modalheading {
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.aboutmodal {
+  background: rgba(51, 51, 51, 0.90);
+  border-radius: 0;
+  // display: inline-block;
+  outline: none !important;
+  position: absolute;
+  // float: left;
+  top: 40%;
+  right: 0;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%) !important;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
+}
+
+.no-border {
+  border: none;
+}
+
+input {
+  // border-radius: 0px;
+  // -webkit-border-radius: 10px;
+  // -moz-border-radius: 10px;
+  margin: 0 0 10px;
+  border: 1px solid #a8dff5;
+  padding: 3px;
+  background: #333;
+  box-shadow: inset 0 0 5px #333;
+  color: #fff;
+}
+
+label {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  float: center;
+  width: 180px;
+  color: #a8dff5;
+  // font-weight: bold;
+  font-size: 14px;
+  text-shadow: 0 0 1px #fff;
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+  border: 0 solid;
+  // text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  float: center;
+  width: 180px;
+  color: #a8dff5;
+  background-color: #333;
+  // font-weight: bold;
+  // font-size: 14px;
+  text-shadow: 0 0 1px #fff;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  cursor: sw-resize;
+}
+
+.button:hover {
+  text-decoration-line: overline underline;
+  text-decoration-style: wavy;
+  background-color: #333;
+
 }
 
 input {
@@ -255,6 +361,7 @@ label {
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+<<<<<<< HEAD
   animation: shine 1s linear infinite;
   @keyframes shine {
     to {
@@ -272,6 +379,8 @@ label {
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+=======
+>>>>>>> navbar
   animation: shine 1s linear infinite;
   @keyframes shine {
     to {
@@ -280,6 +389,7 @@ label {
   }
 }
 
+<<<<<<< HEAD
 
 *{
   box-sizing:border-box;
@@ -358,10 +468,100 @@ nav ul ul {
   nav ul ul {
     display: none;
     position:absolute;
+=======
+.pinkorange {
+  text-align: center;
+  background: radial-gradient(#f08f66 20%, #f066e4 40%, #f08f66 60%, #f066e4 90%);
+  background-size: 200% auto;
+  color: #ffa500;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 1s linear infinite;
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main-navigation {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: 'arial', sans-serif;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+ul {
+  margin: 0; //reset
+  padding: 0;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+
+  li {
+    display: block;
+    list-style-type: none;
+    text-transform: uppercase;
+  }
+
+  li a {
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    color: #777;
+    padding: 1rem;
+  }
+
+  li a:hover {
+    //   background:#777;
+    // transform
+    -webkit-transform: scale(1.0);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    color: lightblue;
+    text-decoration-line: overline underline;
+    text-decoration-style: wavy;
+    //transition
+    -webkit-transition: All 0.5s ease;
+    -moz-transition: All 0.5s ease;
+    -o-transition: All 0.5s ease;
+  }
+}
+@media (min-width: 800px) {
+  .menu {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.menu-item-has-children > a:after {
+  font-family: 'Genericons';
+  content: '\f431';
+  padding: 1px;
+}
+
+nav ul ul {
+  display: none;
+}
+@media (min-width: 800px) {
+  nav ul ul {
+    display: none;
+    position: absolute;
+>>>>>>> navbar
   }
 }
 
 nav ul li:hover > ul {
+<<<<<<< HEAD
   display:block;
   color:#fff;
   padding-left:2rem;
@@ -401,4 +601,44 @@ nav ul li:hover > ul {
     transform: rotate(-90deg);
   }
 
+=======
+  display: block;
+  color: #fff;
+  padding-left: 2rem;
+}
+@media (min-width: 800px) {
+  nav ul li:hover > ul {
+    padding-left: 0;
+    background: #777;
+  }
+
+  nav ul li:hover > ul a {
+    color: #fff;
+  }
+
+  .sub-menu {
+    li {
+      display: flex;
+      padding-right: 2em;
+    }
+
+    li a:hover,
+    li:hover {
+      background: #ddd;
+      color: #777;
+    }
+  }
+
+  nav ul ul ul {
+    margin: 0 0 0 100%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  }
+
+  .menu-item-has-children .menu-item-has-children > a:after {
+    font-family: 'Genericons';
+    content: '\f431';
+    padding: 0;
+    transform: rotate(-90deg);
+  }
+>>>>>>> navbar
 }

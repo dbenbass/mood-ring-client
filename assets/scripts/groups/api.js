@@ -18,6 +18,7 @@ const createGroup = data => {
 const createUserGroup = data => {
   return $.ajax({
     url: config.apiUrl + '/user_groups',
+    group_id: store.groups.id,
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -47,6 +48,16 @@ const showAllGroups = () => {
   })
 }
 
+const showOwnerGroups = () => {
+  return $.ajax({
+    url: config.apiUrl + '/groups?owner_ring=true',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const showOneGroup = function (oneObject) {
   return $.ajax({
     url: config.apiUrl + `/groups/${oneObject.group.id}`,
@@ -57,14 +68,13 @@ const showOneGroup = function (oneObject) {
   })
 }
 
-const deleteGroup = function (data) {
+const deleteGroup = function (groupId) {
   return $.ajax({
-    url: config.apiUrl + `/groups/${data.group.id}`,
+    url: config.apiUrl + /groups/ + groupId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data: data
+    }
   })
 }
 //
@@ -95,6 +105,7 @@ module.exports = {
   createUserGroup,
   createMood,
   showAllGroups,
+  showOwnerGroups,
   deleteGroup,
   updateGroup,
   showOneGroup

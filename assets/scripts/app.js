@@ -10,10 +10,27 @@ const authEvents = require('./auth/events.js')
 const groupEvents = require('./groups/events.js')
 
 $(() => {
+  // $('#sign-up').hide()
+  groupEvents.addHandlers()
+  $('#sign-up-link').click(function () {
+    $('#sign-up').fadeIn()
+  })
+  $('#sign-in-link').click(function () {
+    $('#sign-in').fadeIn()
+  })
+  $('#create-ring-link').click(function () {
+    $('#group-create-div').fadeIn()
+  })
+  $('#join-ring-link').click(function () {
+    $('#user-group-create-div').show()
+  })
+  $('#config-link').click(function () {
+    $('#owner-group-index').show()
+  })
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#sign-out-link').on('click', authEvents.onSignOut)
   $('#group-create').on('submit', groupEvents.onCreateGroup)
   $('#mood-level').on('submit', groupEvents.onCreateMood)
   $('#user-group-create').on('submit', groupEvents.onCreateUserGroup)
@@ -22,9 +39,11 @@ $(() => {
   $('#group-delete').on('submit', groupEvents.onDeleteGroup)
   $('#groups-update').on('submit', groupEvents.onUpdateGroup)
   $('#group-show').on('submit', groupEvents.onShowOneGroup)
+  $('#owner-group-index').on('submit', groupEvents.onShowOwnerGroups)
   $('#change-password').hide()
   $('#group-create-div').hide()
   $('#user-group-create-div').hide()
+  $('.main-navigation').hide()
   $('.mood_id').hide()
   $('#group_id').click(function () {
     $('.mood_id').show()

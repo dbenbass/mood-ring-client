@@ -49,18 +49,39 @@ const onShowOneGroup = event => {
     .catch(ui.showOneGroupFailure) // if your request failed
 }
 
+const onShowOwnerGroups = (event) => {
+  if (event) { event.preventDefault() }
+  console.log('owner groups')
+  api.showOwnerGroups()
+    .then(ui.showOwnerGroupsSuccess) // if your request was succesful
+    .catch(ui.showOwnerGroupsFailure) // if your request failed
+}
 const onDeleteGroup = event => {
   event.preventDefault()
-  const input = getFormFields(event.target)
-  // console.log('delete group')
-  const data = input
+  const groupId = $(event.target).closest('section').data('id')
+  // const input = getFormFields(event.target)
+  console.log('delete group')
+  // const data = input
 
   // take this data and send it to our server
   // using an HTTP request (POST)
-  api.deleteGroup(data)
+  api.deleteGroup(groupId)
     .then(ui.deleteGroupSuccess) // if your request was succesful
     .catch(ui.deleteGroupFailure) // if your request failed
 }
+
+// const onDeleteGroup = event => {
+//   event.preventDefault()
+//   const input = getFormFields(event.target)
+//   // console.log('delete group')
+//   const data = input
+//
+//   // take this data and send it to our server
+//   // using an HTTP request (POST)
+//   api.deleteGroup(data)
+//     .then(ui.deleteGroupSuccess) // if your request was succesful
+//     .catch(ui.deleteGroupFailure) // if your request failed
+// }
 
 // const onDeleteUserGroup = event => {
 //   event.preventDefault()
@@ -96,6 +117,10 @@ const onUpdateGroup = function (event) {
     .catch(ui.updateGroupFailure)
 }
 
+const addHandlers = () => {
+  $('#data').on('click', '#deleteGroupsButton', onDeleteGroup)
+}
+
 module.exports = {
   onCreateGroup,
   onCreateUserGroup,
@@ -103,6 +128,8 @@ module.exports = {
   onShowAllGroups,
   onDeleteGroup,
   onUpdateGroup,
-  onShowOneGroup
+  onShowOneGroup,
+  onShowOwnerGroups,
+  addHandlers
   // onDeleteUserGroup
 }
