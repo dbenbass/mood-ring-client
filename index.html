@@ -30,13 +30,13 @@
   <div class="menu-wrap">
   <ul class="menu" id="menu">
     <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li class="menu-item-has-children"><a href="#">Create a Mood Ring</a>
+    <li><a href="#" data-toggle="modal" data-target="#myModal">About</a></li>
+    <li class="menu-item-has-children"><a href="#">Config</a>
       <ul class="sub-menu">
         <li><a href="#">Plumbing</a></li>
         <li class="menu-item-has-children"><a href="#">Heating</a>
           <ul class="sub-menu">
-            <li><a href="#">Join a Ring</a></li>
+            <li><a href="#" id="join-ring-link">Join a Ring</a></li>
             <li><a href="#">Config</a></li>
             <li><a href="#">Sign Out</a></li>
           </ul>
@@ -44,9 +44,9 @@
         <li><a href="#">Electrical</a></li>
       </ul>
     </li>
-    <li><a href="#">Join a Ring </a></li>
+    <li><a href="#" id="join-ring-link">Join a Ring </a></li>
+    <li><a href="#" id="create-ring-link">Create a Ring </a></li>
 
-    <li><a href="#">Config </a></li>
     <li><a href="#">Sign Out</a></li>
   </ul>
 </div>
@@ -89,7 +89,7 @@
     </div>
   </div>
 </div>
-
+<!-- Moood Ring Banner -->
   <h5 class="linear-wipe">MOOD <br> RING :) (:</h5>
     <p id="deletemessage"></p>
     <p id="message"></p>
@@ -121,13 +121,15 @@
           <input type="name" name="group[name]" placeholder="Name your group" id="ringname">
           <input type="submit" value="Create">
         </fieldset>
+      </div>
       </form>
       <br>
+
+
       <p id="groupmessage">
         <p id="moodmessage">
-
           <div id="user-group-create-div">
-            <form id="user-group-create">
+            <form id="user-group-create" class="hidden">
               <fieldset>
                 <h1>Join a Ring</h1>
                 <input type="group id" name="user_group[group_id]" placeholder="Group ID" class="group_id" id="group_id_formfield">
@@ -135,12 +137,12 @@
                 <input type="mood id" name="user_group[mood_id]" placeholder="Enter a mood from 1-10" class="mood_id" id="moodbox_id">
                 <!-- <input type="user id" name="user_group[user_id]" placeholder="User ID" id="user_id"> -->
                 <input type="submit" value="Submit Mood" class="mood_id">
+              </fieldset>
+            </div>
             </form>
-            </fieldset>
-          </div>
           <br>
           <br>
-          <form id="group-index">
+          <form id="group-index" class="hidden">
             <fieldset>
               <input type="submit" value="Show all Mood Rings">
           </form>
@@ -148,7 +150,7 @@
           <br>
           <br>
 
-          <form id="owner-group-index">
+          <form id="owner-group-index" class="hidden">
             <fieldset>
               <input type="submit" value="Show all of YOUR Mood Rings">
           </form>
@@ -156,7 +158,7 @@
           <br>
           <br>
 
-          <form id="groups-update">
+          <form id="groups-update" class="hidden">
             <fieldset>
               <h1>Change name</h1>
               edit your group by ID number.
@@ -173,7 +175,7 @@
             <br>
             <br>
 
-            <form id="group-delete">
+            <form id="group-delete" class="hidden">
               <fieldset>
                 <h1>Delete a Mood Ring</h1>
                 <form id="group-delete">
@@ -184,7 +186,7 @@
             <br>
             <br>
 
-            <form id="group-show">
+            <form id="group-show" class="hidden">
               <fieldset>
                 <h1>Show one Mood Ring</h1>
                 <form id="group-show">
@@ -205,7 +207,7 @@
             <p id="data"></p>
             <br>
             <br>
-            <form id="change-password">
+            <form id="change-password" class="hidden">
               <fieldset>
                 Change password
                 <input type="password" name="passwords[old]" placeholder="Old password" id="oldpassword">
@@ -214,7 +216,7 @@
               </fieldset>
             </form>
 
-            <form id="sign-out">
+            <form id="sign-out" class="hidden">
               <fieldset>
                 Sign out
                 <input type="submit" value="Sign out">

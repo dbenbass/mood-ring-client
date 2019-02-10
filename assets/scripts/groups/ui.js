@@ -29,7 +29,7 @@ const deleteGroupSuccess = data => {
   $('#updatemessage').val('')
   // console.log('deleteScheme ran. Data is :', data)
   api.showAllGroups()
-    .then(showAllGroupsSuccess)
+    .then(showOwnerGroupsSuccess)
 }
 
 const deleteGroupFailure = data => {
@@ -40,7 +40,7 @@ const deleteGroupFailure = data => {
   $('#updatemessage').val('')
   // console.log('deleteScheme ran. Data is :', data)
   api.showAllGroups()
-    .then(showAllGroupsSuccess)
+    .then(showOwnerGroupsSuccess)
 }
 
 const createUserGroupSuccess = data => {

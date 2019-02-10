@@ -18,6 +18,12 @@ $(() => {
   $('#sign-in-link').click(function () {
     $('#sign-in').fadeIn()
   })
+  $('#create-ring-link').click(function () {
+    $('#group-create-div').fadeIn()
+  })
+  $('#join-ring-link').click(function () {
+    $('#user-group-create').show()
+  })
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
@@ -33,7 +39,7 @@ $(() => {
   $('#owner-group-index').on('submit', groupEvents.onShowOwnerGroups)
   $('#change-password').hide()
   $('#group-create-div').hide()
-  $('#user-group-create-div').hide()
+  // $('#user-group-create-div').hide()
   $('.main-navigation').hide()
   $('.mood_id').hide()
   $('#group_id').click(function () {
