@@ -2,6 +2,7 @@
 
 const store = require('../store.js')
 const api = require('./api.js')
+const showOwnerGroupsTemplate = require('../templates/owned-group-listing.handlebars')
 
 const createGroupSuccess = data => {
   store.group = data.group.id
@@ -79,9 +80,9 @@ const createUserGroupSuccess = data => {
   //         break;
   //     default:
   //         console.log("Something went horribly wrong...");
-const moodColor = Math.round(Number(data.user_group.group.averagemood))
-console.log(moodColor)
-console.log(typeof moodColor)
+  const moodColor = Math.round(Number(data.user_group.group.averagemood))
+  console.log(moodColor)
+  console.log(typeof moodColor)
   switch (moodColor) {
     case 0:
       $('h5').removeClass().addClass('black')
@@ -188,21 +189,35 @@ const showAllGroupsSuccess = data => {
 }
 
 const showOwnerGroupsSuccess = (data) => {
-  console.log('OwnerGroup', data)
-  // store.user_groups = data.user_groups
-  // const groupsAll = data.user_groups
-  // const ownerGroups = []
-  // groupsAll.forEach(function (user_group) {
-  //   if (user_group.user.id === store.user.id) {
-  //     ownerGroups.push(user_group)
-  //   }
-  //   const showOwnerGroupsHtml = (`
-  //   <h1>${data.user_group.user.id}</h1>
-  //   `)
-  //   $('#data').append(showOwnerGroupsHtml)
-  // })
+  const showOwnerGroupsHtml = showOwnerGroupsTemplate({ groups: data.groups })
+  $('#data').empty()
+  $('#data').append(showOwnerGroupsHtml)
+  // $('#auth-message').text('')
 }
-
+// const showOwnerGroupsSuccess = (data) => {
+//   console.log('OwnerGroup', data)
+//   const ownerGroups = data.groups
+//   const allOwnerGroupsLoop = function (ownerGroups) {
+//     const ownerGroupsArray = []
+//     for (let i = 0; i <= ownerGroups.length; i++) {
+//       const ownerGroupPop = ownerGroups.pop()
+//       ownerGroupsArray.push(ownerGroupPop)
+//     }
+//     return ownerGroupsArray
+//   }
+//
+//   allOwnerGroupsLoop(ownerGroups).forEach(group => {
+//     const ownerGroupHTML = (`
+//       <h1>${group.name}</h1>
+//       <p>ID: ${group.id}</p>
+//       <p>Number of members: ${group.numberofparticipants}</p>
+//       <p>Mood: ${group.averagemood}</p>
+//
+//       <br>
+//       `)
+//     $('#data').append(ownerGroupHTML)
+//   })
+// }
 const updateGroupSuccess = id => {
   store.groups = id.groups
   $('#group-id-update').val('')

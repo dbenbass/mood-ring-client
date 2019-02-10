@@ -67,14 +67,13 @@ const showOneGroup = function (oneObject) {
   })
 }
 
-const deleteGroup = function (data) {
+const deleteGroup = function (groupId) {
   return $.ajax({
-    url: config.apiUrl + `/groups/${data.group.id}`,
+    url: config.apiUrl + /groups/ + groupId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data: data
+    }
   })
 }
 //

@@ -11,6 +11,7 @@ const groupEvents = require('./groups/events.js')
 
 $(() => {
   // $('#sign-up').hide()
+  groupEvents.addHandlers()
   $('#sign-up-link').click(function () {
     $('#sign-up').fadeIn()
   })
