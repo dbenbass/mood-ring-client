@@ -41,7 +41,7 @@ const deleteGroupFailure = data => {
   $('#delete-input').val('')
   $('#updatemessage').val('')
   // console.log('deleteScheme ran. Data is :', data)
-  api.showAllGroups()
+  api.showOwnerGroups()
     .then(showOwnerGroupsSuccess)
 }
 
