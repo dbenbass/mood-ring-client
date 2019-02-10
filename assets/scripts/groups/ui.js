@@ -228,8 +228,8 @@ const updateGroupSuccess = id => {
   $('#updatemessage').text('Successfuly updated group')
   // console.log('updateScheme ran. Data is :', id)
   // update a group/s name and then run showallgroups
-  api.showAllGroups()
-    .then(showAllGroupsSuccess)
+  api.showOwnerGroups()
+    .then(showOwnerGroupsSuccess)
   //    .catch()
 }
 

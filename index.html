@@ -17,179 +17,166 @@
 <body class="container-fluid">
   <!-- // sign in and sign up nav bar -->
   <nav class="first-navigation">
-  <div class="menu-wrap">
-  <ul class="menu" id="menu">
-    <li><a href="#" data-toggle="modal" data-target="#myModal">About</a></li>
-    <li><a href="#" id="sign-up-link">Sign Up</a></li>
-    <li><a href="#" id="sign-in-link">Sign in </a></li>
+    <div class="menu-wrap">
+      <ul class="menu" id="menu">
+        <li><a href="#" data-toggle="modal" data-target="#myModal">About</a></li>
+        <li><a href="#" id="sign-up-link">Sign Up</a></li>
+        <li><a href="#" id="sign-in-link">Sign in </a></li>
   </nav>
   </ul>
-</div>
+  </div>
   <!-- // main navigation -->
   <nav class="main-navigation">
-  <div class="menu-wrap">
-  <ul class="menu" id="menu">
-    <li><a href="#">Home</a></li>
-    <li><a href="#" data-toggle="modal" data-target="#myModal">About</a></li>
-    <li class="menu-item-has-children"><a href="#">Config</a>
-      <ul class="sub-menu">
-        <li><a href="#">Plumbing</a></li>
-        <li class="menu-item-has-children"><a href="#">Heating</a>
-          <ul class="sub-menu">
-            <li><a href="#">Config</a></li>
-            <li><a href="#">Sign Out</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Electrical</a></li>
+    <div class="menu-wrap">
+      <ul class="menu" id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#myModal">About</a></li>
+        <li><a href="#" id="config-link">My Mood Rings</a></li>
+        <li><a href="#" id="join-ring-link">Join a Ring </a></li>
+        <li><a href="#" id="create-ring-link">Create a Ring </a></li>
+        <li><a href="#" id="sign-out-link">Sign Out</a></li>
       </ul>
-    </li>
-    <li><a href="#" id="join-ring-link">Join a Ring </a></li>
-    <li><a href="#" id="create-ring-link">Create a Ring </a></li>
-
-    <li><a href="#" id="sign-out-link">Sign Out</a></li>
-  </ul>
-</div>
-</nav>
-
-<!-- The Modal -->
-<div class="modal fade aboutmodal" id="myModal" data-backdrop="false">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content modalblah">
-
-      <!-- Modal Header -->
-      <div class="modal-header no-border modalheading">
-        <h4 class="modal-title">About Mood Ring
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </h4>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body modalheading">
-        Mood ring is an app which allows you to get the general mood of your determied group of people.
-        Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
-        break? Mood ring is an app which allows you to get the general mood of your determied group of people.
-        Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
-        break?Mood ring is an app which allows you to get the general mood of your determied group of people.
-        Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
-        break?Mood ring is an app which allows you to get the general mood of your determied group of people.
-        Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
-        break?Mood ring is an app which allows you to get the general mood of your determied group of people.
-        Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
-        break?Mood ring is an app which allows you to get the general mood of your determied group of people.
-        Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
-        break?
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer no-border">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-
     </div>
-  </div>
-</div>
+  </nav>
 
-<!-- Update Modal -->
-<div class="modal fade changemodal" id="changeModal" data-backdrop="false">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content modalblah">
+  <!-- The Modal -->
+  <div class="modal fade aboutmodal" id="myModal" data-backdrop="false">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content modalblah">
 
-      <!-- Modal Header -->
-      <div class="modal-header no-border modalheading">
-        <h4 class="modal-title">Change name
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </h4>
-      </div>
+        <!-- Modal Header -->
+        <div class="modal-header no-border modalheading">
+          <h4 class="modal-title">About Mood Ring
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </h4>
+        </div>
 
-      <!-- Modal body -->
-    <form id="groups-update">
-      <fieldset>
-        <h1>Change name</h1>
-        edit your group by ID number.
-        <br>
-        <input type="text" name="group[id]" placeholder="ID here" id="group-id-update">
-        <br>
-        <input type="text" name="group[name]" placeholder="Name" id="name-update">
-        <br>
-        <input type="submit" value="Edit group" id="groupsupdate">
+        <!-- Modal body -->
+        <div class="modal-body modalheading">
+          Mood ring is an app which allows you to get the general mood of your determied group of people.
+          Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
+          break? Mood ring is an app which allows you to get the general mood of your determied group of people.
+          Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
+          break?Mood ring is an app which allows you to get the general mood of your determied group of people.
+          Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
+          break?Mood ring is an app which allows you to get the general mood of your determied group of people.
+          Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
+          break?Mood ring is an app which allows you to get the general mood of your determied group of people.
+          Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
+          break?Mood ring is an app which allows you to get the general mood of your determied group of people.
+          Blah blah! Hmmm ho hum ho hu, etcetera, etcetera. Have you ever needed a god damn
+          break?
+        </div>
 
-      <!-- Modal footer -->
-      <div class="modal-footer no-border">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </form>
+        <!-- Modal footer -->
+        <div class="modal-footer no-border">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
       </div>
     </div>
   </div>
-</div>
-<!-- Moood Ring Banner -->
+
+  <!-- Update Modal -->
+  <div class="modal fade changemodal" id="changeModal" data-backdrop="false">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content modalblah">
+
+        <!-- Modal Header -->
+        <div class="modal-header no-border modalheading">
+          <h4 class="modal-title">Change name
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </h4>
+        </div>
+
+        <!-- Modal body -->
+        <form id="groups-update">
+          <fieldset>
+            <h1>Change name</h1>
+            edit your group by ID number.
+            <br>
+            <input type="text" name="group[id]" placeholder="ID here" id="group-id-update">
+            <br>
+            <input type="text" name="group[name]" placeholder="Name" id="name-update">
+            <br>
+            <input type="submit" value="Edit group" id="groupsupdate">
+
+            <!-- Modal footer -->
+            <div class="modal-footer no-border">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Moood Ring Banner -->
   <h5 class="linear-wipe">MOOD <br> RING :) (:</h5>
-    <p id="deletemessage"></p>
-    <p id="message"></p>
-    <form id="sign-up" class="hidden">
-      <fieldset>
-        <label for="signup">Sign Up
+  <p id="deletemessage"></p>
+  <p id="message"></p>
+  <form id="sign-up" class="hidden">
+    <fieldset>
+      <label for="signup">Sign Up
         <input type="text" name="credentials[email]" placeholder="Email" id="signupemail">
         <input type="password" name="credentials[password]" placeholder="Password" id="signuppassword">
         <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" id="signuppasswordconfirm">
         <input type="submit" value="Go" class="button">
-        </label>
-      </fieldset>
-    </form>
+      </label>
+    </fieldset>
+  </form>
 
-    <form id="sign-in" class="hidden">
-      <fieldset>
-        <label for="signin">Sign In
+  <form id="sign-in" class="hidden">
+    <fieldset>
+      <label for="signin">Sign In
         <input type="text" name="credentials[email]" placeholder="Email" id="email">
         <input type="password" name="credentials[password]" placeholder="Password" id="password">
         <input type="submit" value="Go" class="button">
-        </label>
-      </fieldset>
-    </form>
+      </label>
+    </fieldset>
+  </form>
 
-    <div id="group-create-div">
-      <form id="group-create">
-        <fieldset>
-          <h1>Create a Mood Ring</h1>
-          <input type="name" name="group[name]" placeholder="Name your group" id="ringname">
-          <input type="submit" value="Create">
-        </fieldset>
+  <div id="group-create-div">
+    <form id="group-create">
+      <fieldset>
+        <h1>Create a Mood Ring</h1>
+        <input type="name" name="group[name]" placeholder="Name your group" id="ringname">
+        <input type="submit" value="Create">
+      </fieldset>
+  </div>
+  </form>
+  <br>
+
+
+  <p id="groupmessage">
+    <p id="moodmessage">
+      <div id="user-group-create-div">
+        <form id="user-group-create">
+          <fieldset>
+            <h1>Join a Ring</h1>
+            <input type="group id" name="user_group[group_id]" placeholder="Group ID" class="group_id" id="group_id_formfield">
+            <input type="button" value="Join Group" class="group_id" id="group_id">
+            <input type="mood id" name="user_group[mood_id]" placeholder="Enter a mood from 1-10" class="mood_id" id="moodbox_id">
+            <!-- <input type="user id" name="user_group[user_id]" placeholder="User ID" id="user_id"> -->
+            <input type="submit" value="Submit Mood" class="mood_id">
+          </fieldset>
       </div>
       </form>
       <br>
+      <br>
+      <form id="group-index" class="hidden">
+        <fieldset>
+          <input type="submit" value="Show all Mood Rings">
+      </form>
+      </fieldset>
 
 
-      <p id="groupmessage">
-        <p id="moodmessage">
-          <div id="user-group-create-div">
-            <form id="user-group-create">
-              <fieldset>
-                <h1>Join a Ring</h1>
-                <input type="group id" name="user_group[group_id]" placeholder="Group ID" class="group_id" id="group_id_formfield">
-                <input type="button" value="Join Group" class="group_id" id="group_id">
-                <input type="mood id" name="user_group[mood_id]" placeholder="Enter a mood from 1-10" class="mood_id" id="moodbox_id">
-                <!-- <input type="user id" name="user_group[user_id]" placeholder="User ID" id="user_id"> -->
-                <input type="submit" value="Submit Mood" class="mood_id">
-              </fieldset>
-            </div>
-            </form>
-          <br>
-          <br>
-          <form id="group-index" class="hidden">
-            <fieldset>
-              <input type="submit" value="Show all Mood Rings">
-          </form>
-          </fieldset>
-          <br>
-          <br>
+      <form id="owner-group-index" class="hidden">
+        <fieldset>
+          <input type="submit" value="Show all of YOUR Mood Rings">
+      </form>
+      </fieldset>
+      <p id="data"></p>
 
-          <form id="owner-group-index">
-            <fieldset>
-              <input type="submit" value="Show all of YOUR Mood Rings">
-          </form>
-          </fieldset>
-          <br>
-          <br>
-<!--
+      <!--
           <form id="groups-update" class="hidden">
             <fieldset>
               <h1>Change name</h1>
@@ -207,54 +194,53 @@
             <br>
             <br> -->
 
-            <form id="group-delete" class="hidden">
-              <fieldset>
-                <h1>Delete a Mood Ring</h1>
-                <form id="group-delete">
-                  <input type="text" name="group[id]" placeholder="group ID" id="delete-input">
-                  <input type="submit" value="Delete">
-              </fieldset>
-            </form>
-            <br>
-            <br>
+      <form id="group-delete" class="hidden">
+        <fieldset>
+          <h1>Delete a Mood Ring</h1>
+          <form id="group-delete">
+            <input type="text" name="group[id]" placeholder="group ID" id="delete-input">
+            <input type="submit" value="Delete">
+        </fieldset>
+      </form>
+      <br>
+      <br>
 
-            <form id="group-show" class="hidden">
-              <fieldset>
-                <h1>Show one Mood Ring</h1>
-                <form id="group-show">
-                  <input type="text" name="group[id]" placeholder="ID" id="onemoodid">
-                  <input type="submit" value="Show one ring">
-              </fieldset>
-            </form>
-            <br>
-            <br>
-            <br>
-            <br>
+      <form id="group-show" class="hidden">
+        <fieldset>
+          <h1>Show one Mood Ring</h1>
+          <form id="group-show">
+            <input type="text" name="group[id]" placeholder="ID" id="onemoodid">
+            <input type="submit" value="Show one ring">
+        </fieldset>
+      </form>
+      <br>
+      <br>
+      <br>
+      <br>
 
-            <p id="joinmessage"></p>
+      <p id="joinmessage"></p>
 
 
-            <br>
-            <p id="showallmessage"></p>
-            <p id="data"></p>
-            <br>
-            <br>
-            <form id="change-password" class="hidden">
-              <fieldset>
-                Change password
-                <input type="password" name="passwords[old]" placeholder="Old password" id="oldpassword">
-                <input type="password" name="passwords[new]" placeholder="New password" id="newpassword">
-                <input type="submit" value="Change password">
-              </fieldset>
-            </form>
+      <br>
+      <p id="showallmessage"></p>
+      <br>
+      <br>
+      <form id="change-password" class="hidden">
+        <fieldset>
+          Change password
+          <input type="password" name="passwords[old]" placeholder="Old password" id="oldpassword">
+          <input type="password" name="passwords[new]" placeholder="New password" id="newpassword">
+          <input type="submit" value="Change password">
+        </fieldset>
+      </form>
 
-            <form id="sign-out" class="hidden">
-              <fieldset>
-                Sign out
-                <input type="submit" value="Sign out">
-              </fieldset>
-            </form>
-            <br>
+      <form id="sign-out" class="hidden">
+        <fieldset>
+          Sign out
+          <input type="submit" value="Sign out">
+        </fieldset>
+      </form>
+      <br>
 
 </body>
 

@@ -24,6 +24,9 @@ $(() => {
   $('#join-ring-link').click(function () {
     $('#user-group-create-div').show()
   })
+  $('#config-link').click(function () {
+    $('#owner-group-index').show()
+  })
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
