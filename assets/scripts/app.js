@@ -23,6 +23,7 @@ $(() => {
   })
   $('#join-ring-link').click(function () {
     $('#user-group-create-div').show()
+    $('#group-index').show()
   })
   $('#config-link').click(function () {
     $('#owner-group-index').show()
