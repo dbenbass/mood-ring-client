@@ -25,9 +25,9 @@ $(() => {
     $('#user-group-create-div').show()
     $('#group-index').show()
   })
-  $('#config-link').click(function () {
-    $('#owner-group-index').show()
-  })
+  // $('#config-link').click(function () {
+  //   $('#owner-group-index').show()
+  // })
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
@@ -40,7 +40,7 @@ $(() => {
   $('#group-delete').on('submit', groupEvents.onDeleteGroup)
   $('#groups-update').on('submit', groupEvents.onUpdateGroup)
   $('#group-show').on('submit', groupEvents.onShowOneGroup)
-  $('#owner-group-index').on('submit', groupEvents.onShowOwnerGroups)
+  $('#config-link').on('click', groupEvents.onShowOwnerGroups)
   $('#change-password').hide()
   $('#group-create-div').hide()
   $('#user-group-create-div').hide()
