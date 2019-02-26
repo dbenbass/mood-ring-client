@@ -20,10 +20,15 @@ $(() => {
   })
   $('#create-ring-link').click(function () {
     $('#group-create-div').fadeIn()
+    $('#user-group-create-div').fadeOut()
+    $('#group-index').fadeOut()
+    $('#data').empty()
   })
   $('#join-ring-link').click(function () {
+    $('#group-create-div').fadeOut()
     $('#user-group-create-div').show()
     $('#group-index').show()
+    $('#data').empty()
   })
   // $('#config-link').click(function () {
   //   $('#owner-group-index').show()

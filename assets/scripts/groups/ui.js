@@ -54,6 +54,7 @@ const createUserGroupSuccess = data => {
   console.log('createUserGroup ran. Data is :', data)
   $('.mood_id').hide()
   $('#group-create-div').hide()
+  $('#owner-group-index').hide()
   $('.group_id').show()
   $('#group_id_formfield').val('')
   //
@@ -193,6 +194,8 @@ const showAllGroupsSuccess = data => {
 
 const showOwnerGroupsSuccess = (data) => {
   const showOwnerGroupsHtml = showOwnerGroupsTemplate({ groups: data.groups })
+  $('#user-group-create-div').hide()
+  $('#group-index').hide()
   $('#data').empty()
   $('#data').append(showOwnerGroupsHtml)
   // $('#auth-message').text('')
