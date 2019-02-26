@@ -8,7 +8,6 @@
 
 const authEvents = require('./auth/events.js')
 const groupEvents = require('./groups/events.js')
-// const handleEvents = require('./templates/helpers/owned-group-listing.handlebars')
 
 $(() => {
   // $('#sign-up').hide()
