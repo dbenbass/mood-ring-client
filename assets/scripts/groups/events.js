@@ -56,19 +56,7 @@ const onShowOwnerGroups = (event) => {
     .then(ui.showOwnerGroupsSuccess) // if your request was succesful
     .catch(ui.showOwnerGroupsFailure) // if your request failed
 }
-const onDeleteGroup = event => {
-  event.preventDefault()
-  const groupId = $(event.target).closest('section').data('id')
-  // const input = getFormFields(event.target)
-  console.log('delete group')
-  // const data = input
 
-  // take this data and send it to our server
-  // using an HTTP request (POST)
-  api.deleteGroup(groupId)
-    .then(ui.deleteGroupSuccess) // if your request was succesful
-    .catch(ui.deleteGroupFailure) // if your request failed
-}
 
 // const onDeleteGroup = event => {
 //   event.preventDefault()
@@ -117,8 +105,34 @@ const onUpdateGroup = function (event) {
     .catch(ui.updateGroupFailure)
 }
 
+const onDeleteGroup = event => {
+  event.preventDefault()
+  const groupId = $(event.target).closest('section').data('id')
+  // const input = getFormFields(event.target)
+  console.log('delete group')
+  // const data = input
+
+  // take this data and send it to our server
+  // using an HTTP request (POST)
+  api.deleteGroup(groupId)
+    .then(ui.deleteGroupSuccess) // if your request was succesful
+    .catch(ui.deleteGroupFailure) // if your request failed
+}
+
+const onUpdateGroupId = event => {
+  event.preventDefault()
+  const groupId = $(event.target).closest('section').data('id')
+  // const input = getFormFields(event.target)
+  console.log(groupId)
+  $('#group-id-update').val($('#group-id-update').val() + `${groupId}`)
+  // $('#group-id-update').val($('group-id-update').val(groupId) + groupId)
+
+  // const data = input
+}
+
 const addHandlers = () => {
   $('#data').on('click', '#deleteGroupsButton', onDeleteGroup)
+  $('#data').on('click', '#updateGroupsButton', onUpdateGroupId)
 }
 
 module.exports = {
@@ -130,6 +144,7 @@ module.exports = {
   onUpdateGroup,
   onShowOneGroup,
   onShowOwnerGroups,
-  addHandlers
+  addHandlers,
+  onUpdateGroupId
   // onDeleteUserGroup
 }

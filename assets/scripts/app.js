@@ -8,6 +8,7 @@
 
 const authEvents = require('./auth/events.js')
 const groupEvents = require('./groups/events.js')
+// const handleEvents = require('./templates/helpers/owned-group-listing.handlebars')
 
 $(() => {
   // $('#sign-up').hide()
@@ -31,8 +32,8 @@ $(() => {
     $('#data').empty()
     $('#groupmessage').text(`Click the show all mood-rings button below to find the ID of the ring you'd like to join.
     Then enter that ID and click 'Join Group'. Remember, you can only submit one mood per ring. `)
-
   })
+
   $('#config-link').click(function () {
     $('#group-create-div').fadeOut()
     $('#groupmessage').empty()
@@ -54,6 +55,8 @@ $(() => {
   $('#group-index').on('submit', groupEvents.onShowAllGroups)
   $('#group-delete').on('submit', groupEvents.onDeleteGroup)
   $('#groups-update').on('submit', groupEvents.onUpdateGroup)
+  // $('#groups-update-append').on('click', handleEvents.onUpdateGroup)
+
   $('#group-show').on('submit', groupEvents.onShowOneGroup)
   $('#config-link').on('click', groupEvents.onShowOwnerGroups)
   $('#change-password').hide()
@@ -66,6 +69,7 @@ $(() => {
     $('.group_id').hide()
     $('#groupmessage').append('<br/> Now, submit your mood on a scale of 1-10')
   })
+
 
   // $('#scheme-index').on('submit', schemeEvents.onShowAllSchemes)
   // $('#scheme-delete').on('submit', schemeEvents.onDeleteScheme)

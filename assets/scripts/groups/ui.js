@@ -34,6 +34,7 @@ const deleteGroupSuccess = data => {
     .then(showOwnerGroupsSuccess)
 }
 
+
 const deleteGroupFailure = data => {
   $('#updatemessage').text('Error in deleting group')
   $('#deletemessage').removeClass()

@@ -89,6 +89,15 @@ const deleteGroup = function (groupId) {
 //   })
 // }
 
+// const updateGroup = function (groupId) {
+//   return $.ajax({
+//     url: config.apiUrl + /groups/ + groupId,
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 const updateGroup = function (groupObject) {
   return $.ajax({
     url: config.apiUrl + `/groups/${groupObject.group.id}`,
