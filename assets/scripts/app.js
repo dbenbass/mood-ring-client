@@ -29,7 +29,17 @@ $(() => {
     $('#user-group-create-div').show()
     $('#group-index').show()
     $('#data').empty()
+    $('#groupmessage').text(`Click the show all mood-rings button below to find the ID of the ring you'd like to join.
+    Then enter that ID and click 'Join Group'. Remember, you can only submit one mood per ring. `)
+
   })
+  $('#config-link').click(function () {
+    $('#group-create-div').fadeOut()
+    $('#groupmessage').empty()
+  })
+
+  // $('#group-create').fadeOut()
+
   // $('#config-link').click(function () {
   //   $('#owner-group-index').show()
   // })
