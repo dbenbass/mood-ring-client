@@ -1,0 +1,37 @@
+{{#each groups as |group|}}
+  {{log group}}
+  <div>
+  <h1 data-id="{{group.id}}"> <small>{{group.name}}</small></h1>
+  <section data-id="{{group.id}}">
+    <p>{{#if group.numberofparticipants}}
+        Number of participants: {{group.numberofparticipants}}
+      {{else}}
+        No participants.
+      {{/if}}
+      <p>Group id: {{group.id}}
+      <p>Average mood: {{group.averagemood}}
+
+        <hr>
+      </p>
+    </p>
+    <button id="joinGroupsButton" type="button" class="button join-group">Join</button>
+
+<hr>
+<br>
+  </section>
+</div>
+
+    <!-- <tr>
+      <td data-id="{{group.id}}">{{group.id}}</td>
+      <td>{{group.name}}</td>
+      <td>{{group.numberofparticipants}}</td>
+      <td>{{group.averagemood}}</td>
+
+    </div>
+  </tr> -->
+
+{{/each}}
+<!-- </tr>
+</tbody> -->
+</table>
+</div>

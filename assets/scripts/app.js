@@ -59,8 +59,8 @@ $(() => {
   $('#group-show').on('submit', groupEvents.onShowOneGroup)
   $('#config-link').on('click', groupEvents.onShowOwnerGroups)
   $('#change-password').hide()
-  $('#group-create-div').hide()
-  $('#user-group-create-div').hide()
+  // $('#group-create-div').hide()
+  // $('#user-group-create-div').hide()
   $('.main-navigation').hide()
   $('.mood_id').hide()
   $('#group_id').click(function () {
@@ -68,7 +68,6 @@ $(() => {
     $('.group_id').hide()
     $('#groupmessage').append('<br/> Now, submit your mood on a scale of 1-10')
   })
-
 
   // $('#scheme-index').on('submit', schemeEvents.onShowAllSchemes)
   // $('#scheme-delete').on('submit', schemeEvents.onDeleteScheme)
