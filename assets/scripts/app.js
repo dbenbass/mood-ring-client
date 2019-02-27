@@ -26,20 +26,16 @@ $(() => {
   })
   $('#join-ring-link').click(function () {
     $('#group-create-div').fadeOut()
-    $('#user-group-create-div').show()
+    $('#user-group-create-div').fadeIn()
     $('#group-index').show()
     $('#data').empty()
     $('#groupmessage').text(`Click the show all mood-rings button below to find the ID of the ring you'd like to join.
     Then enter that ID and click 'Join Group'. Remember, you can only submit one mood per ring. `)
   })
 
-  $('#config-link').click(function () {
-    $('#group-create-div').fadeOut()
-    $('#groupmessage').empty()
+  $('#groupsupdate').click(function () {
+    $('#changeModal').modal('hide')
   })
-
-  // $('#group-create').fadeOut()
-
   // $('#config-link').click(function () {
   //   $('#owner-group-index').show()
   // })
@@ -59,7 +55,7 @@ $(() => {
   $('#group-show').on('submit', groupEvents.onShowOneGroup)
   $('#config-link').on('click', groupEvents.onShowOwnerGroups)
   $('#change-password').hide()
-  // $('#group-create-div').hide()
+  $('#group-create-div').hide()
   // $('#user-group-create-div').hide()
   $('.main-navigation').hide()
   $('.mood_id').hide()

@@ -162,6 +162,7 @@ const createMoodFailure = data => {
   // console.error('createMood did not run. Data is :', data)
 }
 
+<<<<<<< HEAD
 // const showAllGroupsSuccess = data => {
 //   store.groups = data.groups
 //   // console.log(store.schemes)
@@ -193,6 +194,8 @@ const createMoodFailure = data => {
 //     $('#data').append(groupHTML)
 //   })
 // }
+=======
+>>>>>>> fix
 const showAllGroupsSuccess = (data) => {
   const showAllGroupsHtml = showAllGroupsTemplate({ groups: data.groups })
   $('#user-group-create-div').hide()
@@ -201,6 +204,41 @@ const showAllGroupsSuccess = (data) => {
   $('#data').append(showAllGroupsHtml)
   // $('#auth-message').text('')
 }
+<<<<<<< HEAD
+=======
+// const showAllGroupsSuccess = data => {
+//   store.groups = data.groups
+//   // console.log(store.schemes)
+//   console.log('showAllGroups ran. Data is :', data)
+//   $('#showallmessage').html('You are currently viewing all mood-rings')
+//   $('#message').removeClass()
+//   $('#message').addClass('success')
+//   $('#data').html('')
+//   // add new schemes to top instead of bottom
+//   const allGroups = data.groups
+//   const allGroupsLoop = function (allGroups) {
+//     const groupsArray = []
+//     for (let i = 0; i <= allGroups.length; i++) {
+//       const groupPop = allGroups.pop()
+//       groupsArray.push(groupPop)
+//     }
+//     return groupsArray
+//   }
+//
+//   allGroupsLoop(allGroups).forEach(group => {
+//     const groupHTML = (`
+//       <h1>${group.name}</h1>
+//       <p>ID: ${group.id}</p>
+//       <p>Number of members: ${group.numberofparticipants}</p>
+//       <p>Mood: ${group.averagemood}</p>
+//
+//       <br>
+//       `)
+//     $('#data').append(groupHTML)
+//   })
+// }
+
+>>>>>>> fix
 const showOwnerGroupsSuccess = (data) => {
   const showOwnerGroupsHtml = showOwnerGroupsTemplate({ groups: data.groups })
   $('#user-group-create-div').hide()

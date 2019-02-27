@@ -107,6 +107,7 @@ const onUpdateGroup = function (event) {
     .catch(ui.updateGroupFailure)
 }
 
+<<<<<<< HEAD
 const onDeleteGroup = event => {
   event.preventDefault()
   const groupId = $(event.target).closest('section').data('id')
@@ -121,6 +122,8 @@ const onDeleteGroup = event => {
     .catch(ui.deleteGroupFailure) // if your request failed
 }
 
+=======
+>>>>>>> fix
 const onUpdateGroupId = event => {
   event.preventDefault()
   const groupId = $(event.target).closest('section').data('id')
@@ -143,6 +146,10 @@ const onCreateUserGroupId = event => {
 
   // const data = input
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fix
 const addHandlers = () => {
   $('#data').on('click', '#deleteGroupsButton', onDeleteGroup)
   $('#data').on('click', '#updateGroupsButton', onUpdateGroupId)
