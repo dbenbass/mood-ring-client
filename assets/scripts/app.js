@@ -30,6 +30,10 @@ $(() => {
     $('#group-index').show()
     $('#data').empty()
   })
+
+  $('#groupsupdate').click(function () {
+    $('#changeModal').modal('hide')
+  })
   // $('#config-link').click(function () {
   //   $('#owner-group-index').show()
   // })
