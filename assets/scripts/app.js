@@ -52,7 +52,6 @@ $(() => {
   $('#config-link').on('click', groupEvents.onShowOwnerGroups)
   $('#change-password').hide()
   $('#group-create-div').hide()
-  // $('#user-group-create-div').hide()
   $('.main-navigation').hide()
   $('.mood_id').hide()
   $('#group_id').click(function () {
