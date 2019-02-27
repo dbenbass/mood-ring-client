@@ -1,0 +1,56 @@
+
+<!--Table-->
+<!-- <div class="container" "table-responsive" style="margin-top: 50px;">
+<table id="dest" class="table table-hover table-striped table-bordered"> -->
+<!--Table head-->
+  <!-- <thead>
+    <tr>
+      <th scope="col" onclick="sortTable(0)">ID </th>
+      <th scope="col" onclick="sortTable(1)">Name </th>
+      <th scope="col" onclick="sortTable(1)">Number of Members </th>
+      <th scope="col" onclick="sortTable(1)">Average Mood </th> -->
+      <!-- <th scope="col" onclick="sortTable(2)">Delete</th>
+      <th scope="col" onclick="sortTable(3)">Update</th> -->
+
+
+    <!-- </tr>
+  </thead>
+  <tbody> -->
+
+{{#each groups as |group|}}
+  {{log group}}
+  <div>
+  <h1 data-id="{{group.id}}"> <small>{{group.name}}</small></h1>
+  <section data-id="{{group.id}}">
+    <p>{{#if group.numberofparticipants}}
+        Number of participants: {{group.numberofparticipants}}
+      {{else}}
+        No participants.
+      {{/if}}
+      <p>Group id: {{group.id}}
+      <p>Average mood: {{group.averagemood}}
+
+        <hr>
+      </p>
+    </p>
+    <button id="joinGroupsButton" type="button" class="button join-group">Join</button>
+
+<hr>
+<br>
+  </section>
+</div>
+
+    <!-- <tr>
+      <td data-id="{{group.id}}">{{group.id}}</td>
+      <td>{{group.name}}</td>
+      <td>{{group.numberofparticipants}}</td>
+      <td>{{group.averagemood}}</td>
+
+    </div>
+  </tr> -->
+
+{{/each}}
+<!-- </tr>
+</tbody> -->
+</table>
+</div>

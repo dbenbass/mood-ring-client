@@ -97,6 +97,9 @@ const onCreateUserGroup = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
   data.user_group.user_id = store.user.id
+  const groupId = $(event.target).closest('section').data('id')
+  $('#group_id_formfield').val($('group_id_formfield').val() + `${groupId}`)
+
   // console.log('we are here', data)
   // take this data and send it to our server
   // using an HTTP request (POST)
@@ -117,8 +120,33 @@ const onUpdateGroup = function (event) {
     .catch(ui.updateGroupFailure)
 }
 
+const onUpdateGroupId = event => {
+  event.preventDefault()
+  const groupId = $(event.target).closest('section').data('id')
+  // const input = getFormFields(event.target)
+  console.log(groupId)
+  $('#group-id-update').val($('#group-id-update').val() + `${groupId}`)
+  // $('#group-id-update').val($('group-id-update').val(groupId) + groupId)
+
+  // const data = input
+}
+
+const onCreateUserGroupId = event => {
+  event.preventDefault()
+  const groupId = $(event.target).closest('section').data('id')
+  // const input = getFormFields(event.target)
+  console.log(groupId)
+  $('#group_id_formfield').val('').val($('#group_id_formfield').val() + `${groupId}`)
+  $('#user-group-create-div').show()
+  // $('#group-id-update').val($('group-id-update').val(groupId) + groupId)
+
+  // const data = input
+}
+
 const addHandlers = () => {
   $('#data').on('click', '#deleteGroupsButton', onDeleteGroup)
+  $('#data').on('click', '#updateGroupsButton', onUpdateGroupId)
+  $('#data').on('click', '#joinGroupsButton', onCreateUserGroupId)
 }
 
 module.exports = {

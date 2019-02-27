@@ -16,9 +16,10 @@ const createGroup = data => {
 }
 
 const createUserGroup = data => {
+  const groupId = $(event.target).closest('section').data('id')
   return $.ajax({
     url: config.apiUrl + '/user_groups',
-    group_id: store.groups.id,
+    group_id: groupId,
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -88,7 +89,7 @@ const deleteGroup = function (groupId) {
 //     data: data
 //   })
 // }
-
+//
 const updateGroup = function (groupObject) {
   return $.ajax({
     url: config.apiUrl + `/groups/${groupObject.group.id}`,
@@ -99,7 +100,16 @@ const updateGroup = function (groupObject) {
     data: groupObject
   })
 }
-
+//
+// const updateGroup = function (groupId) {
+//   return $.ajax({
+//     url: config.apiUrl + /groups/ + groupId,
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 module.exports = {
   createGroup,
   createUserGroup,
