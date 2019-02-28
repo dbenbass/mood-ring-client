@@ -236,6 +236,7 @@ const showOwnerGroupsSuccess = (data) => {
 const updateGroupSuccess = id => {
   store.groups = id.groups
   $('#group-id-update').val('')
+  $('#group_id_formfield').val('')
   $('#name-update').val('')
   $('#updatemessage').text('Successfuly updated group')
   // console.log('updateScheme ran. Data is :', id)

@@ -125,7 +125,7 @@ const onUpdateGroupId = event => {
   const groupId = $(event.target).closest('section').data('id')
   // const input = getFormFields(event.target)
   console.log(groupId)
-  $('#group-id-update').val($('#group-id-update').val() + `${groupId}`)
+  $('#group-id-update').val('').val($('#group-id-update').val() + `${groupId}`)
   // $('#group-id-update').val($('group-id-update').val(groupId) + groupId)
 
   // const data = input

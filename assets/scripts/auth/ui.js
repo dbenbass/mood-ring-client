@@ -94,7 +94,7 @@ const signOutSuccess = data => {
   // $('#sign-up').show()
   $('#change-password').hide()
   $('#group-create-div').hide()
-  $('#groups-update').hide()
+  // $('#groups-update').hide()
   $('#group-delete').hide()
   $('#group-index').hide()
   $('#owner-group-index').hide()
