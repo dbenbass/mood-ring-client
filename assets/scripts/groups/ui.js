@@ -13,6 +13,7 @@ const createGroupSuccess = data => {
   $('#message').text('')
   $('#updatemessage').val('')
   $('#groupmessage').html(`Your mood ring is called ${data.group.name}. Please enter ID ${data.group.id} below to join the ring!`)
+  $('#group_id_formfield').val('').val($('#group_id_formfield').val() + `${data.group.id}`).hide()
   $('')
   console.log('createGroup ran. Data is :', data)
   api.showAllGroups()
@@ -239,6 +240,7 @@ const updateGroupSuccess = id => {
   $('#group_id_formfield').val('')
   $('#name-update').val('')
   $('#updatemessage').text('Successfuly updated group')
+  $('#data').show()
   // console.log('updateScheme ran. Data is :', id)
   // update a group/s name and then run showallgroups
   api.showOwnerGroups()

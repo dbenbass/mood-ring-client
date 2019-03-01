@@ -30,6 +30,9 @@ $(() => {
     $('#group-index').show()
     $('#data').empty()
   })
+  $('#modalClose').click(function () {
+    $('#data').show()
+  })
 
   $('#groupsupdate').click(function () {
     $('#changeModal').modal('hide')

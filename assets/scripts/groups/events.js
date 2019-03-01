@@ -126,6 +126,7 @@ const onUpdateGroupId = event => {
   // const input = getFormFields(event.target)
   console.log(groupId)
   $('#group-id-update').val('').val($('#group-id-update').val() + `${groupId}`)
+  $('#data').hide()
   // $('#group-id-update').val($('group-id-update').val(groupId) + groupId)
 
   // const data = input
@@ -142,6 +143,13 @@ const onCreateUserGroupId = event => {
 
   // const data = input
 }
+//
+// const onModalClose = event => {
+//   $('#data').show()
+// $('#group-id-update').val($('group-id-update').val(groupId) + groupId)
+
+// const data = input
+
 
 const addHandlers = () => {
   $('#data').on('click', '#deleteGroupsButton', onDeleteGroup)
