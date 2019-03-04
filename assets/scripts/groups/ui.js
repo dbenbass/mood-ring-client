@@ -12,7 +12,7 @@ const createGroupSuccess = data => {
   $('#ringname').val('')
   $('#message').text('')
   $('#updatemessage').val('')
-  $('#groupmessage').html(`Your mood ring is called ${data.group.name}. Please enter ID ${data.group.id} below to join the ring!`)
+  $('#groupmessage').html(`Your mood ring is called ${data.group.name}. Click 'Join Group' to continue`)
   $('#group_id_formfield').val('').val($('#group_id_formfield').val() + `${data.group.id}`).hide()
   $('')
   console.log('createGroup ran. Data is :', data)
